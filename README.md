@@ -1,0 +1,2 @@
+# VibeCodingTarot
+Vibe Coding Tarot
