@@ -1,0 +1,888 @@
+/* 全局樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 頭部樣式 */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #6c5ce7;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo p {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #6c5ce7;
+    color: white;
+}
+
+/* 主要內容 */
+.main-content {
+    padding: 40px 0;
+}
+
+/* 英雄區域 */
+.hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 占卜選項 */
+.divination-options {
+    margin-bottom: 60px;
+}
+
+.divination-options h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.option-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.option-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.option-card.coming-soon {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.coming-soon-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ff6b6b;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.card-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.option-card h4 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.option-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.card-features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-features span {
+    color: #6c5ce7;
+    font-size: 0.9rem;
+}
+
+/* 塔羅牌展示 */
+.tarot-showcase {
+    margin-bottom: 60px;
+}
+
+.tarot-showcase h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cards-preview {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card-preview {
+    text-align: center;
+}
+
+.card-back {
+    width: 80px;
+    height: 120px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card-preview:hover .card-back {
+    transform: rotateY(180deg);
+}
+
+.card-preview p {
+    color: white;
+    font-weight: 500;
+}
+
+/* 關於塔羅牌 */
+.about-tarot {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.about-tarot h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-top: 5px;
+}
+
+.feature h4 {
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* 占卜區域 */
+.divination-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.divination-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.divination-header h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.divination-header p {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* 問題輸入 */
+.question-section {
+    margin-bottom: 40px;
+}
+
+.question-section h3 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.question-input textarea {
+    width: 100%;
+    padding: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.question-input textarea:focus {
+    outline: none;
+    border-color: #6c5ce7;
+}
+
+.question-tips {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.question-tips p {
+    color: #666;
+    font-style: italic;
+}
+
+/* 抽牌區域 */
+.card-drawing-area {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.card-deck {
+    margin-bottom: 30px;
+}
+
+.card-back {
+    width: 120px;
+    height: 180px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card-back:hover {
+    transform: scale(1.05);
+}
+
+/* 三張牌布局 */
+.three-cards-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.card-position {
+    text-align: center;
+}
+
+.card-position h4 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.card-slot {
+    margin-bottom: 15px;
+}
+
+.card-slot .card-back {
+    width: 100px;
+    height: 150px;
+    font-size: 2.5rem;
+}
+
+/* 抽牌按鈕 */
+.draw-button {
+    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.draw-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(108, 92, 231, 0.4);
+}
+
+.draw-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 結果區域 */
+.result-section {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.result-header h3 {
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.result-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.action-button {
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-button:hover {
+    background: #5a4fcf;
+    transform: translateY(-1px);
+}
+
+/* 卡片顯示 */
+.card-display {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.card-image {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-image.reversed {
+    transform: rotate(180deg);
+}
+
+.card-face {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card-name-en {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.card-suit {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.card-info {
+    padding: 20px 0;
+}
+
+.card-position {
+    margin-bottom: 20px;
+}
+
+.position-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.position-value {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.position-value.upright {
+    background: #d4edda;
+    color: #155724;
+}
+
+.position-value.reversed {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.card-meaning,
+.card-description {
+    margin-bottom: 25px;
+}
+
+.card-meaning h4,
+.card-description h4 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.card-meaning p,
+.card-description p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.card-keywords h4 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.keywords-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.keyword {
+    background: #6c5ce7;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.question-context {
+    background: #e9ecef;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.question-context h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.question-context p {
+    color: #666;
+    font-style: italic;
+}
+
+/* 三張牌結果 */
+.three-cards-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.card-result-item {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header h4 {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.card-position-badge {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.card-position-badge.upright {
+    background: #d4edda;
+    color: #155724;
+}
+
+.card-position-badge.reversed {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.card-result-item .card-image {
+    margin-bottom: 15px;
+}
+
+.card-result-item .card-meaning h5 {
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.card-result-item .card-meaning p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* 整體解讀 */
+.overall-interpretation {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.overall-interpretation h4 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.interpretation-content p {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.interpretation-content ul {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.interpretation-content li {
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.guidance {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.guidance h5 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.guidance p {
+    color: #666;
+    margin: 0;
+}
+
+/* 載入動畫 */
+.loading-section {
+    text-align: center;
+    padding: 40px;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #6c5ce7;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-section p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* 塔羅牌知識 */
+.tarot-knowledge,
+.three-cards-explanation {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.tarot-knowledge h3,
+.three-cards-explanation h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.knowledge-content,
+.explanation-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.knowledge-item,
+.position-explanation {
+    margin-bottom: 25px;
+}
+
+.knowledge-item h4,
+.position-item h4 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.knowledge-item p,
+.position-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.reading-tips h4 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.reading-tips ul {
+    list-style: none;
+    padding: 0;
+}
+
+.reading-tips li {
+    color: #666;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.reading-tips li::before {
+    content: "✨";
+    position: absolute;
+    left: 0;
+}
+
+/* 頁腳 */
+.footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+.footer p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content,
+    .knowledge-content,
+    .explanation-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .card-display {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .three-cards-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .three-cards-display {
+        grid-template-columns: 1fr;
+    }
+    
+    .result-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .result-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .divination-section,
+    .about-tarot,
+    .tarot-knowledge,
+    .three-cards-explanation {
+        padding: 20px;
+    }
+    
+    .option-card {
+        padding: 20px;
+    }
+    
+    .card-icon {
+        font-size: 3rem;
+    }
+    
+    .draw-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}
