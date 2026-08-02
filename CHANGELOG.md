@@ -20,6 +20,8 @@
 - 新增 Flask gzip 壓縮（flask-compress）
 - 新增 HTML 頁面快取控制（1 小時）
 - 新增字體 preconnect 優化載入速度
+- 新增占卜歷史記錄頁面 `/history`
+- 導航列新增「歷史記錄」連結
 
 ### 重構
 - 抽取共同 JS 邏輯到 `divination.js` 模組
