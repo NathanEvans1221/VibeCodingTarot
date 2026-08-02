@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+
+{% block title %}歷史記錄{% endblock %}
+{% block subtitle %}占卜歷史記錄{% endblock %}
+
+{% block content %}
+<section class="divination-section">
+    <div class="divination-header">
+        <h2>占卜歷史記錄</h2>
+        <p>查看您過去的占卜結果</p>
+    </div>
+
+    <!-- 操作按鈕 -->
+    <div class="history-actions">
+        <button id="refreshBtn" class="action-button" onclick="loadReadings()">重新整理</button>
+        <button id="clearBtn" class="action-button danger" onclick="clearAllReadings()">清空記錄</button>
+    </div>
+
+    <!-- 記錄統計 -->
+    <div class="history-stats" id="historyStats">
+        <p>共 <span id="totalCount">0</span> 筆記錄</p>
+    </div>
+
+    <!-- 記錄列表 -->
+    <div class="history-list" id="historyList">
+        <!-- 動態內容將在這裡顯示 -->
+    </div>
+
+    <!-- 空狀態 -->
+    <div class="empty-state" id="emptyState" style="display: none;">
+        <div class="empty-icon">📝</div>
+        <h3>尚無占卜記錄</h3>
+        <p>完成一次占卜後，記錄會自動儲存到這裡</p>
+        <a href="/single-card" class="action-button">開始占卜</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // 初始化
+    document.addEventListener('DOMContentLoaded', function() {
+        loadReadings();
+    });
+
+    // 載入所有記錄
+    function loadReadings() {
+        const readings = Divination.getReadings();
+        const historyList = document.getElementById('historyList');
+        const emptyState = document.getElementById('emptyState');
+        const totalCount = document.getElementById('totalCount');
+
+        totalCount.textContent = readings.length;
+
+        if (readings.length === 0) {
+            historyList.style.display = 'none';
+            emptyState.style.display = 'block';
+            return;
+        }
+
+        historyList.style.display = 'block';
+        emptyState.style.display = 'none';
+
+        historyList.innerHTML = readings.map(reading => `
+            <div class="history-item" data-id="${reading.id}">
+                <div class="history-header">
+                    <div class="history-type ${reading.type}">
+                        ${reading.type === 'single' ? '🃏 單張牌' : '🎴 三張牌'}
+                    </div>
+                    <div class="history-time">${Divination.formatTime(reading.timestamp)}</div>
+                </div>
+                
+                <div class="history-question">
+                    ${reading.question ? `"${Divination.escapeHtml(reading.question)}"` : '<em>未輸入問題</em>'}
+                </div>
+
+                <div class="history-cards">
+                    ${renderCards(reading)}
+                </div>
+
+                <div class="history-actions-item">
+                    <button class="action-button small" onclick="viewReading('${reading.id}')">查看詳情</button>
+                    <button class="action-button small danger" onclick="deleteReading('${reading.id}')">刪除</button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // 渲染卡片
+    function renderCards(reading) {
+        if (reading.type === 'single') {
+            const card = reading.card;
+            const isReversed = reading.is_reversed;
+            return `
+                <div class="mini-card ${isReversed ? 'reversed' : ''}">
+                    <span class="card-name">${card.name}</span>
+                    <span class="card-position ${isReversed ? 'reversed' : 'upright'}">${isReversed ? '逆位' : '正位'}</span>
+                </div>
+            `;
+        } else {
+            return reading.cards.map(cardData => `
+                <div class="mini-card ${cardData.is_reversed ? 'reversed' : ''}">
+                    <span class="card-position-label">${cardData.position}</span>
+                    <span class="card-name">${cardData.card.name}</span>
+                    <span class="card-position ${cardData.is_reversed ? 'reversed' : 'upright'}">${cardData.is_reversed ? '逆位' : '正位'}</span>
+                </div>
+            `).join('');
+        }
+    }
+
+    // 查看詳情
+    function viewReading(id) {
+        const readings = Divination.getReadings();
+        const reading = readings.find(r => r.id === id);
+        if (!reading) return;
+
+        // 顯示詳情彈窗
+        const modal = document.createElement('div');
+        modal.className = 'modal-overlay';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>占卜詳情</h3>
+                    <button class="modal-close" onclick="this.closest('.modal-overlay').remove()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="detail-time">${Divination.formatTime(reading.timestamp)}</div>
+                    <div class="detail-question">
+                        <strong>問題：</strong>
+                        ${reading.question ? `"${Divination.escapeHtml(reading.question)}"` : '未輸入問題'}
+                    </div>
+                    <div class="detail-cards">
+                        ${renderDetailCards(reading)}
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) modal.remove();
+        });
+    }
+
+    // 渲染詳情卡片
+    function renderDetailCards(reading) {
+        if (reading.type === 'single') {
+            const card = reading.card;
+            const isReversed = reading.is_reversed;
+            return `
+                <div class="detail-card">
+                    <div class="card-image ${isReversed ? 'reversed' : ''}">
+                        <div class="card-face">
+                            <div class="card-name">${card.name}</div>
+                            <div class="card-name-en">${card.name_en}</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <p><strong>位置：</strong>${isReversed ? '逆位' : '正位'}</p>
+                        <p><strong>含義：</strong>${isReversed ? card.reversed_meaning : card.upright_meaning}</p>
+                        <p><strong>描述：</strong>${card.description}</p>
+                    </div>
+                </div>
+            `;
+        } else {
+            return reading.cards.map(cardData => `
+                <div class="detail-card">
+                    <div class="card-header">
+                        <h4>${cardData.position}</h4>
+                        <span class="card-position ${cardData.is_reversed ? 'reversed' : 'upright'}">${cardData.is_reversed ? '逆位' : '正位'}</span>
+                    </div>
+                    <div class="card-image ${cardData.is_reversed ? 'reversed' : ''}">
+                        <div class="card-face">
+                            <div class="card-name">${cardData.card.name}</div>
+                            <div class="card-name-en">${cardData.card.name_en}</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <p><strong>含義：</strong>${cardData.is_reversed ? cardData.card.reversed_meaning : cardData.card.upright_meaning}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+    }
+
+    // 刪除記錄
+    function deleteReading(id) {
+        if (!confirm('確定要刪除此記錄嗎？')) return;
+        
+        if (Divination.deleteReading(id)) {
+            Divination.showSuccess('記錄已刪除');
+            loadReadings();
+        } else {
+            Divination.showError('刪除失敗');
+        }
+    }
+
+    // 清空所有記錄
+    function clearAllReadings() {
+        if (!confirm('確定要清空所有占卜記錄嗎？此操作無法復原。')) return;
+        
+        if (Divination.clearReadings()) {
+            Divination.showSuccess('所有記錄已清空');
+            loadReadings();
+        } else {
+            Divination.showError('清空失敗');
+        }
+    }
+</script>
+{% endblock %}

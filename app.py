@@ -95,6 +95,14 @@ def three_cards():
     response.headers['Cache-Control'] = f'public, max-age={APP_CONSTANTS["HTML_CACHE_MAX_AGE"]}'
     return response
 
+@app.route('/history')
+def history():
+    """占卜歷史記錄頁面"""
+    logger.info('訪問占卜歷史記錄頁面')
+    response = make_response(render_template('history.html', active_page='history'))
+    response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+    return response
+
 @app.route('/api/draw-single', methods=['POST'])
 def draw_single_card():
     """抽取單張牌API"""
