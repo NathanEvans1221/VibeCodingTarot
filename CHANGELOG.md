@@ -34,7 +34,7 @@
 ### 塔羅牌占卜網站初始版本
 - 單張牌占卜功能
 - 三張牌（過去-現在-未來）占卜功能
-- 22 張 Major Arcana 牌組
+- 完整 78 張塔羅牌（22 Major Arcana + 56 Minor Arcana）
 - RESTful API 端點
 - 紫色漸層主題 UI
 
