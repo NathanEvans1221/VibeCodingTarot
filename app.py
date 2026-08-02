@@ -1,15 +1,33 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, session
 import json
 import random
 from datetime import datetime
 import os
+import secrets
 
 app = Flask(__name__)
 
-# 配置
-app.config['SECRET_KEY'] = 'vibe-coding-tarot-2025-secret-key-very-secure'
+# 配置：SECRET_KEY 從環境變數讀取，未設定時自動生成隨機密鑰
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') or secrets.token_hex(32)
 app.config['JSON_AS_ASCII'] = False  # 支援中文JSON
+
+
+def generate_csrf_token():
+    """生成 CSRF token 並存入 session"""
+    if '_csrf_token' not in session:
+        session['_csrf_token'] = secrets.token_hex(32)
+    return session['_csrf_token']
+
+
+# 註冊 Jinja2 全域函數，模板中可使用 {{ csrf_token() }}
+app.jinja_env.globals['csrf_token'] = generate_csrf_token
+
+
+def validate_csrf_token():
+    """驗證 CSRF token，失败時回傳 False"""
+    token = request.headers.get('X-CSRF-Token') or (request.get_json() or {}).get('_csrf_token')
+    return token and token == session.get('_csrf_token')
 
 # 載入塔羅牌數據
 def load_tarot_cards():
@@ -41,6 +59,8 @@ def three_cards():
 @app.route('/api/draw-single', methods=['POST'])
 def draw_single_card():
     """抽取單張牌API"""
+    if not validate_csrf_token():
+        return jsonify({'success': False, 'message': 'CSRF 驗證失敗'}), 403
     try:
         data = request.get_json()
         question = data.get('question', '')
@@ -72,6 +92,8 @@ def draw_single_card():
 @app.route('/api/draw-three', methods=['POST'])
 def draw_three_cards():
     """抽取三張牌API"""
+    if not validate_csrf_token():
+        return jsonify({'success': False, 'message': 'CSRF 驗證失敗'}), 403
     try:
         data = request.get_json()
         question = data.get('question', '')
@@ -131,6 +153,8 @@ def get_card_info(card_id):
 @app.route('/api/save-reading', methods=['POST'])
 def save_reading():
     """保存占卜記錄API"""
+    if not validate_csrf_token():
+        return jsonify({'success': False, 'message': 'CSRF 驗證失敗'}), 403
     try:
         data = request.get_json()
         
