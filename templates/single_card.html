@@ -104,6 +104,15 @@
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script>
+        const CSRF_TOKEN = '{{ csrf_token() }}';
+
+        // HTML 轉義函數，防止 XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
         // 單張牌占卜功能
         async function drawSingleCard() {
             const question = document.getElementById('questionInput').value.trim();
@@ -111,17 +120,18 @@
             const resultSection = document.getElementById('resultSection');
             const cardDeck = document.getElementById('cardDeck');
             const drawButton = document.getElementById('drawButton');
-            
+
             // 顯示載入動畫
             loadingSection.style.display = 'block';
             resultSection.style.display = 'none';
             drawButton.disabled = true;
-            
+
             try {
                 const response = await fetch('/api/draw-single', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        'X-CSRF-Token': CSRF_TOKEN
                     },
                     body: JSON.stringify({
                         question: question
@@ -187,7 +197,7 @@
                         ${data.question ? `
                         <div class="question-context">
                             <h4>您的問題</h4>
-                            <p>"${data.question}"</p>
+                            <p>"${escapeHtml(data.question)}"</p>
                         </div>
                         ` : ''}
                     </div>
