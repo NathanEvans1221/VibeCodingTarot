@@ -809,6 +809,163 @@ body {
     opacity: 0.8;
 }
 
+/* ========== 凱爾特十字牌陣 ========== */
+
+.celtic-cross-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.celtic-core,
+.celtic-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.celtic-position {
+    text-align: center;
+}
+
+.celtic-position h4 {
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.celtic-position .card-slot .card-back {
+    width: 80px;
+    height: 120px;
+    font-size: 2rem;
+}
+
+.celtic-result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.celtic-result-item {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.celtic-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.celtic-pos-badge {
+    background: #6c5ce7;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.celtic-result-item .card-image {
+    margin-bottom: 10px;
+    min-height: 100px;
+}
+
+.celtic-result-item .card-name {
+    font-size: 1rem;
+}
+
+.celtic-result-item .card-name-en {
+    font-size: 0.75rem;
+}
+
+.celtic-result-item .card-meaning p {
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.celtic-explanation {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.celtic-explanation h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.position-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.position-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.pos-num {
+    background: #6c5ce7;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .celtic-cross-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .celtic-core {
+        order: 1;
+    }
+
+    .celtic-timeline {
+        order: 2;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .celtic-timeline .celtic-position {
+        width: calc(33% - 10px);
+    }
+
+    .celtic-result-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .position-list {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ========== 歷史記錄頁面 ========== */
 
 /* 歷史記錄操作按鈕 */

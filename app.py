@@ -36,11 +36,26 @@ logger = logging.getLogger(__name__)
 # 應用常數
 APP_CONSTANTS = {
     'THREE_CARDS_COUNT': 3,
+    'CELTIC_CROSS_COUNT': 10,
     'DEFAULT_PORT': 5000,
     'MAX_READINGS': 100,
     'STATIC_CACHE_MAX_AGE': 31536000,  # 1 年
     'HTML_CACHE_MAX_AGE': 3600  # 1 小時
 }
+
+# 凱爾特十字牌陣位置定義
+CELTIC_CROSS_POSITIONS = [
+    {'index': 0, 'name': '現狀', 'name_en': 'Present', 'description': '目前的情況和核心問題'},
+    {'index': 1, 'name': '挑戰', 'name_en': 'Challenge', 'description': '面臨的障礙和對立面'},
+    {'index': 2, 'name': '根源', 'name_en': 'Root', 'description': '事件的根源和深層原因'},
+    {'index': 3, 'name': '過去', 'name_en': 'Past', 'description': '近期的過去和已發生的事'},
+    {'index': 4, 'name': '可能', 'name_en': 'Possible', 'description': '可能的結果和發展方向'},
+    {'index': 5, 'name': '未來', 'name_en': 'Future', 'description': '近期的未來發展'},
+    {'index': 6, 'name': '自我', 'name_en': 'Self', 'description': '對此事的態度和看法'},
+    {'index': 7, 'name': '環境', 'name_en': 'Environment', 'description': '外在環境和他人影響'},
+    {'index': 8, 'name': '希望', 'name_en': 'Hope', 'description': '內心的期望或恐懼'},
+    {'index': 9, 'name': '結果', 'name_en': 'Outcome', 'description': '最終的結果和結論'}
+]
 
 
 def generate_csrf_token():
@@ -101,6 +116,14 @@ def history():
     logger.info('訪問占卜歷史記錄頁面')
     response = make_response(render_template('history.html', active_page='history'))
     response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+    return response
+
+@app.route('/celtic-cross')
+def celtic_cross():
+    """凱爾特十字占卜頁面"""
+    logger.info('訪問凱爾特十字占卜頁面')
+    response = make_response(render_template('celtic_cross.html', active_page='celtic'))
+    response.headers['Cache-Control'] = f'public, max-age={APP_CONSTANTS["HTML_CACHE_MAX_AGE"]}'
     return response
 
 @app.route('/api/draw-single', methods=['POST'])
@@ -178,6 +201,53 @@ def draw_three_cards():
         })
     except Exception as e:
         logger.error(f'三張牌抽取失敗: {str(e)}')
+        return jsonify({
+            'success': False,
+            'message': f'抽牌失敗: {str(e)}'
+        }), 500
+
+@app.route('/api/draw-celtic-cross', methods=['POST'])
+def draw_celtic_cross():
+    """抽取凱爾特十字牌陣API"""
+    if not validate_csrf_token():
+        logger.warning('CSRF 驗證失敗')
+        return jsonify({'success': False, 'message': 'CSRF 驗證失敗'}), 403
+    try:
+        data = request.get_json()
+        question = data.get('question', '')
+
+        # 隨機選擇十張不同的牌
+        selected_cards = random.sample(tarot_cards, APP_CONSTANTS['CELTIC_CROSS_COUNT'])
+
+        # 為每張牌隨機決定正位或逆位
+        cards_with_position = []
+        for i, card in enumerate(selected_cards):
+            is_reversed = random.choice([True, False])
+            position_info = CELTIC_CROSS_POSITIONS[i]
+            cards_with_position.append({
+                'card': card,
+                'is_reversed': is_reversed,
+                'position': position_info['name'],
+                'position_en': position_info['name_en'],
+                'position_description': position_info['description']
+            })
+
+        result = {
+            'cards': cards_with_position,
+            'question': question,
+            'spread_type': 'celtic_cross',
+            'timestamp': datetime.now().isoformat()
+        }
+
+        card_names = [c['card']['name'] for c in cards_with_position]
+        logger.info(f'凱爾特十字抽取成功: {", ".join(card_names)}')
+        return jsonify({
+            'success': True,
+            'data': result,
+            'message': '抽牌成功'
+        })
+    except Exception as e:
+        logger.error(f'凱爾特十字抽取失敗: {str(e)}')
         return jsonify({
             'success': False,
             'message': f'抽牌失敗: {str(e)}'
