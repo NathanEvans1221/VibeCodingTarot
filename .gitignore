@@ -229,3 +229,9 @@ graphify-out/cache/
 
 # Claude Code per-machine settings
 .claude/
+
+# Git worktrees (isolated workspaces)
+.worktrees/
+
+# brainstorming visual companion (mockups, session state)
+.superpowers/
