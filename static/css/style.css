@@ -1,194 +1,274 @@
-/* 全局樣式 */
-* {
+/* ============================================
+   VibeCodingTarot — 神秘學美學設計系統
+   設計理念：古董書頁 × 星空 × 神祕儀式感
+   ============================================ */
+
+/* 設計令牌 */
+:root {
+    /* 色彩系統 — 深夜星空 + 古金色 */
+    --color-void: #0a0a12;
+    --color-midnight: #12121e;
+    --color-cosmos: #1a1a2e;
+    --color-stardust: #e8dcc8;        /* 古紙色 */
+    --color-gold: #c9a96e;            /* 古金色 */
+    --color-gold-bright: #d4b87a;
+    --color-gold-dim: #8a7a5a;
+    --color-whisper: #9a8e7a;         /* 次要文字 */
+    --color-parchment: #f5f0e8;       /* 亮色背景 */
+    --color-ink: #2a2520;             /* 深色文字 */
+    --color-crimson: #8b3a3a;         /* 警示/逆位 */
+    --color-sage: #4a6b5a;            /* 正位/成功 */
+
+    /* 字體系統 */
+    --font-display: 'Noto Serif TC', 'Georgia', 'Times New Roman', serif;
+    --font-body: 'Noto Sans TC', 'Segoe UI', system-ui, sans-serif;
+    --font-mono: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+
+    /* 間距系統 */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+
+    /* 邊框 */
+    --border-subtle: 1px solid rgba(201, 169, 110, 0.15);
+    --border-accent: 1px solid rgba(201, 169, 110, 0.3);
+}
+
+/* 全局重設 */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Noto Sans TC', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    color: var(--color-stardust);
+    background-color: var(--color-void);
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 星空背景 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(100, 80, 150, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(80, 100, 140, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(120, 80, 100, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1080px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 var(--space-lg);
 }
 
-/* 頭部樣式 */
+/* ========== 頭部 ========== */
 .header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 20px 0;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    background: rgba(18, 18, 30, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: var(--border-subtle);
+    padding: var(--space-lg) 0;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
 .logo h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #6c5ce7;
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-gold);
     text-align: center;
-    margin-bottom: 10px;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-xs);
 }
 
 .logo p {
     text-align: center;
-    color: #666;
-    font-size: 1.1rem;
+    color: var(--color-whisper);
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
 }
 
 .nav {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
 }
 
 .nav-link {
     text-decoration: none;
-    color: #666;
-    font-weight: 500;
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
+    color: var(--color-whisper);
+    font-size: 0.85rem;
+    font-weight: 400;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 2px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    border-bottom: 2px solid transparent;
+    letter-spacing: 0.04em;
 }
 
-.nav-link:hover,
+.nav-link:hover {
+    color: var(--color-gold);
+}
+
 .nav-link.active {
-    background: #6c5ce7;
-    color: white;
+    color: var(--color-gold);
+    border-bottom-color: var(--color-gold);
 }
 
-/* 主要內容 */
+/* ========== 主要內容 ========== */
 .main-content {
-    padding: 40px 0;
+    padding: var(--space-3xl) 0;
 }
 
-/* 英雄區域 */
+/* ========== 英雄區域 ========== */
 .hero {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: var(--space-3xl);
+    padding: var(--space-3xl) 0;
 }
 
 .hero-content h2 {
-    font-size: 3rem;
-    color: white;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    margin-bottom: var(--space-md);
+    letter-spacing: 0.06em;
+    line-height: 1.4;
 }
 
 .hero-content p {
-    font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 600px;
+    font-size: 1rem;
+    color: var(--color-whisper);
+    max-width: 520px;
     margin: 0 auto;
+    line-height: 1.8;
 }
 
-/* 占卜選項 */
+/* ========== 占卜選項 ========== */
 .divination-options {
-    margin-bottom: 60px;
+    margin-bottom: var(--space-3xl);
 }
 
 .divination-options h3 {
+    font-family: var(--font-display);
     text-align: center;
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 40px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    margin-bottom: var(--space-xl);
+    letter-spacing: 0.06em;
 }
 
 .options-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
 }
 
 .option-card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    padding: 30px;
+    background: rgba(26, 26, 46, 0.6);
+    border: var(--border-subtle);
+    border-radius: 4px;
+    padding: var(--space-xl);
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
     cursor: pointer;
+    transition: border-color 0.3s ease, background 0.3s ease;
     position: relative;
-    overflow: hidden;
 }
 
 .option-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--color-gold-dim);
+    background: rgba(26, 26, 46, 0.8);
 }
 
 .option-card.coming-soon {
-    opacity: 0.7;
+    opacity: 0.5;
     cursor: not-allowed;
 }
 
 .coming-soon-badge {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    background: #ff6b6b;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    top: var(--space-md);
+    right: var(--space-md);
+    background: var(--color-crimson);
+    color: var(--color-stardust);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 2px;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
 .card-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+    opacity: 0.9;
 }
 
 .option-card h4 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 15px;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--color-stardust);
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.04em;
 }
 
 .option-card p {
-    color: #666;
-    margin-bottom: 20px;
+    color: var(--color-whisper);
+    margin-bottom: var(--space-md);
+    font-size: 0.9rem;
 }
 
 .card-features {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--space-xs);
 }
 
 .card-features span {
-    color: #6c5ce7;
-    font-size: 0.9rem;
+    color: var(--color-gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
 }
 
-/* 塔羅牌展示 */
+/* ========== 塔羅牌展示 ========== */
 .tarot-showcase {
-    margin-bottom: 60px;
+    margin-bottom: var(--space-3xl);
 }
 
 .tarot-showcase h3 {
+    font-family: var(--font-display);
     text-align: center;
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 40px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    margin-bottom: var(--space-xl);
+    letter-spacing: 0.06em;
 }
 
 .cards-preview {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: var(--space-lg);
     flex-wrap: wrap;
 }
 
@@ -197,18 +277,18 @@ body {
 }
 
 .card-back {
-    width: 80px;
-    height: 120px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 10px;
+    width: 72px;
+    height: 108px;
+    background: var(--color-cosmos);
+    border: 1px solid var(--color-gold-dim);
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    margin-bottom: var(--space-sm);
+    transition: transform 0.4s ease;
 }
 
 .card-preview:hover .card-back {
@@ -216,162 +296,183 @@ body {
 }
 
 .card-preview p {
-    color: white;
-    font-weight: 500;
+    color: var(--color-whisper);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
 }
 
-/* 關於塔羅牌 */
+/* ========== 關於塔羅牌 ========== */
 .about-tarot {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    padding: 40px;
-    margin-bottom: 40px;
+    background: rgba(26, 26, 46, 0.4);
+    border: var(--border-subtle);
+    border-radius: 4px;
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
 }
 
 .about-tarot h3 {
+    font-family: var(--font-display);
     text-align: center;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    margin-bottom: var(--space-lg);
+    letter-spacing: 0.06em;
 }
 
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: var(--space-xl);
     align-items: start;
 }
 
 .about-text p {
-    margin-bottom: 20px;
-    color: #666;
-    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+    color: var(--color-whisper);
+    font-size: 0.95rem;
     line-height: 1.8;
 }
 
 .about-features {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: var(--space-lg);
 }
 
 .feature {
     display: flex;
     align-items: flex-start;
-    gap: 15px;
+    gap: var(--space-md);
 }
 
 .feature-icon {
-    font-size: 2rem;
-    margin-top: 5px;
+    font-size: 1.5rem;
+    margin-top: 2px;
+    opacity: 0.8;
 }
 
 .feature h4 {
-    color: #333;
-    margin-bottom: 8px;
-}
-
-.feature p {
-    color: #666;
+    color: var(--color-stardust);
+    margin-bottom: var(--space-xs);
     font-size: 0.95rem;
 }
 
-/* 占卜區域 */
+.feature p {
+    color: var(--color-whisper);
+    font-size: 0.85rem;
+}
+
+/* ========== 占卜區域 ========== */
 .divination-section {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    padding: 40px;
-    margin-bottom: 40px;
+    background: rgba(26, 26, 46, 0.4);
+    border: var(--border-subtle);
+    border-radius: 4px;
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
 }
 
 .divination-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: var(--space-xl);
 }
 
 .divination-header h2 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 15px;
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--color-gold);
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.06em;
 }
 
 .divination-header p {
-    color: #666;
-    font-size: 1.2rem;
+    color: var(--color-whisper);
+    font-size: 1rem;
 }
 
-/* 問題輸入 */
+/* ========== 問題輸入 ========== */
 .question-section {
-    margin-bottom: 40px;
+    margin-bottom: var(--space-xl);
 }
 
 .question-section h3 {
-    color: #333;
-    margin-bottom: 20px;
+    color: var(--color-stardust);
+    margin-bottom: var(--space-md);
     text-align: center;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
 }
 
 .question-input textarea {
     width: 100%;
-    padding: 20px;
-    border: 2px solid #e0e0e0;
-    border-radius: 15px;
-    font-size: 1.1rem;
-    font-family: inherit;
+    padding: var(--space-md);
+    border: var(--border-subtle);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-family: var(--font-body);
     resize: vertical;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.2s ease;
+    background: rgba(10, 10, 18, 0.5);
+    color: var(--color-stardust);
 }
 
 .question-input textarea:focus {
     outline: none;
-    border-color: #6c5ce7;
+    border-color: var(--color-gold-dim);
+}
+
+.question-input textarea::placeholder {
+    color: var(--color-whisper);
+    opacity: 0.6;
 }
 
 .question-tips {
-    margin-top: 15px;
+    margin-top: var(--space-sm);
     text-align: center;
 }
 
 .question-tips p {
-    color: #666;
+    color: var(--color-whisper);
     font-style: italic;
+    font-size: 0.85rem;
+    opacity: 0.7;
 }
 
-/* 抽牌區域 */
+/* ========== 抽牌區域 ========== */
 .card-drawing-area {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: var(--space-xl);
 }
 
 .card-deck {
-    margin-bottom: 30px;
+    margin-bottom: var(--space-lg);
 }
 
 .card-back {
-    width: 120px;
-    height: 180px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 15px;
+    width: 108px;
+    height: 162px;
+    background: var(--color-cosmos);
+    border: 1px solid var(--color-gold-dim);
+    border-radius: 4px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    color: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+    font-size: 2rem;
+    color: var(--color-gold);
+    transition: transform 0.3s ease;
     cursor: pointer;
 }
 
 .card-back:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
-/* 三張牌布局 */
+/* ========== 三張牌布局 ========== */
 .three-cards-layout {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-bottom: 30px;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
 }
 
 .card-position {
@@ -379,105 +480,113 @@ body {
 }
 
 .card-position h4 {
-    color: #333;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+    color: var(--color-whisper);
+    margin-bottom: var(--space-sm);
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    font-family: var(--font-display);
 }
 
 .card-slot {
-    margin-bottom: 15px;
+    margin-bottom: var(--space-sm);
 }
 
 .card-slot .card-back {
-    width: 100px;
-    height: 150px;
-    font-size: 2.5rem;
+    width: 88px;
+    height: 132px;
+    font-size: 1.8rem;
 }
 
-/* 抽牌按鈕 */
+/* ========== 抽牌按鈕 ========== */
 .draw-button {
-    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: 600;
+    background: transparent;
+    color: var(--color-gold);
+    border: 1px solid var(--color-gold-dim);
+    padding: var(--space-sm) var(--space-xl);
+    border-radius: 2px;
+    font-size: 0.95rem;
+    font-weight: 400;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: var(--space-sm);
+    font-family: var(--font-body);
+    letter-spacing: 0.06em;
 }
 
 .draw-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(108, 92, 231, 0.4);
+    background: rgba(201, 169, 110, 0.1);
+    border-color: var(--color-gold);
 }
 
 .draw-button:disabled {
-    opacity: 0.6;
+    opacity: 0.4;
     cursor: not-allowed;
-    transform: none;
 }
 
-/* 結果區域 */
+/* ========== 結果區域 ========== */
 .result-section {
-    background: #f8f9fa;
-    border-radius: 15px;
-    padding: 30px;
-    margin-top: 30px;
+    background: rgba(10, 10, 18, 0.4);
+    border: var(--border-subtle);
+    border-radius: 4px;
+    padding: var(--space-xl);
+    margin-top: var(--space-lg);
 }
 
 .result-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: var(--space-lg);
     flex-wrap: wrap;
-    gap: 15px;
+    gap: var(--space-md);
 }
 
 .result-header h3 {
-    color: #333;
-    font-size: 1.8rem;
+    color: var(--color-gold);
+    font-size: 1.3rem;
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
 }
 
 .result-actions {
     display: flex;
-    gap: 15px;
+    gap: var(--space-sm);
 }
 
 .action-button {
-    background: #6c5ce7;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
+    background: transparent;
+    color: var(--color-whisper);
+    border: var(--border-subtle);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 2px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
+    font-family: var(--font-body);
 }
 
 .action-button:hover {
-    background: #5a4fcf;
-    transform: translateY(-1px);
+    color: var(--color-gold);
+    border-color: var(--color-gold-dim);
 }
 
-/* 卡片顯示 */
+/* ========== 卡片顯示 ========== */
 .card-display {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 30px;
+    grid-template-columns: 260px 1fr;
+    gap: var(--space-xl);
     align-items: start;
 }
 
 .card-image {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 15px;
-    padding: 20px;
+    background: var(--color-cosmos);
+    border: 1px solid var(--color-gold-dim);
+    border-radius: 4px;
+    padding: var(--space-lg);
     text-align: center;
-    color: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    color: var(--color-stardust);
 }
 
 .card-image.reversed {
@@ -485,296 +594,329 @@ body {
 }
 
 .card-face {
-    min-height: 200px;
+    min-height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .card-name {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    color: var(--color-gold);
+    letter-spacing: 0.06em;
 }
 
 .card-name-en {
-    font-size: 1rem;
-    opacity: 0.8;
-    margin-bottom: 5px;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin-bottom: var(--space-xs);
+    color: var(--color-whisper);
 }
 
 .card-suit {
-    font-size: 0.9rem;
-    opacity: 0.7;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    color: var(--color-whisper);
 }
 
 .card-info {
-    padding: 20px 0;
+    padding: var(--space-md) 0;
 }
 
 .card-position {
-    margin-bottom: 20px;
+    margin-bottom: var(--space-md);
 }
 
 .position-label {
-    font-weight: 600;
-    color: #333;
+    font-weight: 500;
+    color: var(--color-stardust);
 }
 
 .position-value {
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-weight: 600;
-    margin-left: 10px;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 2px;
+    font-weight: 500;
+    margin-left: var(--space-sm);
+    font-size: 0.85rem;
 }
 
 .position-value.upright {
-    background: #d4edda;
-    color: #155724;
+    background: rgba(74, 107, 90, 0.2);
+    color: var(--color-sage);
+    border: 1px solid rgba(74, 107, 90, 0.3);
 }
 
 .position-value.reversed {
-    background: #f8d7da;
-    color: #721c24;
+    background: rgba(139, 58, 58, 0.2);
+    color: var(--color-crimson);
+    border: 1px solid rgba(139, 58, 58, 0.3);
 }
 
 .card-meaning,
 .card-description {
-    margin-bottom: 25px;
+    margin-bottom: var(--space-lg);
 }
 
 .card-meaning h4,
 .card-description h4 {
-    color: #333;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
+    color: var(--color-gold-dim);
+    margin-bottom: var(--space-sm);
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    font-family: var(--font-display);
 }
 
 .card-meaning p,
 .card-description p {
-    color: #666;
-    line-height: 1.6;
+    color: var(--color-whisper);
+    line-height: 1.8;
+    font-size: 0.9rem;
 }
 
 .card-keywords h4 {
-    color: #333;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+    color: var(--color-gold-dim);
+    margin-bottom: var(--space-sm);
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    font-family: var(--font-display);
 }
 
 .keywords-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: var(--space-sm);
 }
 
 .keyword {
-    background: #6c5ce7;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    background: rgba(201, 169, 110, 0.1);
+    color: var(--color-gold-dim);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 2px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(201, 169, 110, 0.2);
 }
 
 .question-context {
-    background: #e9ecef;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
+    background: rgba(10, 10, 18, 0.3);
+    padding: var(--space-md);
+    border-radius: 4px;
+    margin-top: var(--space-md);
+    border: var(--border-subtle);
 }
 
 .question-context h4 {
-    color: #333;
-    margin-bottom: 10px;
+    color: var(--color-gold-dim);
+    margin-bottom: var(--space-sm);
+    font-size: 0.85rem;
 }
 
 .question-context p {
-    color: #666;
+    color: var(--color-whisper);
     font-style: italic;
+    font-size: 0.9rem;
 }
 
-/* 三張牌結果 */
+/* ========== 三張牌結果 ========== */
 .three-cards-display {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
 }
 
 .card-result-item {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(26, 26, 46, 0.5);
+    border: var(--border-subtle);
+    border-radius: 4px;
+    padding: var(--space-lg);
 }
 
 .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: var(--space-md);
 }
 
 .card-header h4 {
-    color: #333;
-    font-size: 1.2rem;
+    color: var(--color-stardust);
+    font-size: 1rem;
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
 }
 
 .card-position-badge {
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 2px;
+    font-size: 0.75rem;
+    font-weight: 500;
 }
 
 .card-position-badge.upright {
-    background: #d4edda;
-    color: #155724;
+    background: rgba(74, 107, 90, 0.2);
+    color: var(--color-sage);
 }
 
 .card-position-badge.reversed {
-    background: #f8d7da;
-    color: #721c24;
+    background: rgba(139, 58, 58, 0.2);
+    color: var(--color-crimson);
 }
 
 .card-result-item .card-image {
-    margin-bottom: 15px;
+    margin-bottom: var(--space-md);
 }
 
 .card-result-item .card-meaning h5 {
-    color: #333;
-    margin-bottom: 8px;
-    font-size: 1rem;
+    color: var(--color-gold-dim);
+    margin-bottom: var(--space-sm);
+    font-size: 0.85rem;
+    font-family: var(--font-display);
 }
 
 .card-result-item .card-meaning p {
-    color: #666;
-    font-size: 0.9rem;
-    line-height: 1.5;
+    color: var(--color-whisper);
+    font-size: 0.85rem;
+    line-height: 1.7;
 }
 
-/* 整體解讀 */
+/* ========== 整體解讀 ========== */
 .overall-interpretation {
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
-    margin-top: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(26, 26, 46, 0.5);
+    border: var(--border-subtle);
+    border-radius: 4px;
+    padding: var(--space-xl);
+    margin-top: var(--space-lg);
 }
 
 .overall-interpretation h4 {
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
+    color: var(--color-gold);
+    margin-bottom: var(--space-md);
+    font-size: 1.2rem;
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
 }
 
 .interpretation-content p {
-    color: #666;
-    margin-bottom: 15px;
-    line-height: 1.6;
+    color: var(--color-whisper);
+    margin-bottom: var(--space-sm);
+    line-height: 1.8;
+    font-size: 0.9rem;
 }
 
 .interpretation-content ul {
-    margin: 20px 0;
-    padding-left: 20px;
+    margin: var(--space-md) 0;
+    padding-left: var(--space-lg);
 }
 
 .interpretation-content li {
-    color: #666;
-    margin-bottom: 10px;
-    line-height: 1.6;
+    color: var(--color-whisper);
+    margin-bottom: var(--space-sm);
+    line-height: 1.7;
+    font-size: 0.9rem;
 }
 
 .guidance {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
+    background: rgba(10, 10, 18, 0.3);
+    padding: var(--space-md);
+    border-radius: 4px;
+    margin-top: var(--space-md);
+    border: var(--border-subtle);
 }
 
 .guidance h5 {
-    color: #333;
-    margin-bottom: 10px;
+    color: var(--color-gold-dim);
+    margin-bottom: var(--space-sm);
+    font-size: 0.9rem;
 }
 
 .guidance p {
-    color: #666;
+    color: var(--color-whisper);
     margin: 0;
+    font-size: 0.9rem;
 }
 
-/* 載入動畫 */
+/* ========== 載入動畫 ========== */
 .loading-section {
     text-align: center;
-    padding: 40px;
+    padding: var(--space-xl);
 }
 
 .loading-spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #6c5ce7;
+    width: 36px;
+    height: 36px;
+    border: 2px solid rgba(201, 169, 110, 0.15);
+    border-top-color: var(--color-gold-dim);
     border-radius: 50%;
     animation: spin 1s linear infinite;
-    margin: 0 auto 20px;
+    margin: 0 auto var(--space-md);
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    to { transform: rotate(360deg); }
 }
 
 .loading-section p {
-    color: #666;
-    font-size: 1.1rem;
+    color: var(--color-whisper);
+    font-size: 0.9rem;
+    font-style: italic;
 }
 
-/* 塔羅牌知識 */
+/* ========== 塔羅牌知識 ========== */
 .tarot-knowledge,
 .three-cards-explanation {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    padding: 40px;
-    margin-bottom: 40px;
+    background: rgba(26, 26, 46, 0.4);
+    border: var(--border-subtle);
+    border-radius: 4px;
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
 }
 
 .tarot-knowledge h3,
 .three-cards-explanation h3 {
+    font-family: var(--font-display);
     text-align: center;
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 30px;
+    font-size: 1.4rem;
+    color: var(--color-gold);
+    margin-bottom: var(--space-lg);
+    letter-spacing: 0.06em;
 }
 
 .knowledge-content,
 .explanation-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: var(--space-xl);
     align-items: start;
 }
 
 .knowledge-item,
 .position-explanation {
-    margin-bottom: 25px;
+    margin-bottom: var(--space-lg);
 }
 
 .knowledge-item h4,
 .position-item h4 {
-    color: #333;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
+    color: var(--color-stardust);
+    margin-bottom: var(--space-sm);
+    font-size: 0.95rem;
+    font-family: var(--font-display);
 }
 
 .knowledge-item p,
 .position-item p {
-    color: #666;
-    line-height: 1.6;
+    color: var(--color-whisper);
+    line-height: 1.7;
+    font-size: 0.9rem;
 }
 
 .reading-tips h4 {
-    color: #333;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+    color: var(--color-stardust);
+    margin-bottom: var(--space-sm);
+    font-size: 0.95rem;
+    font-family: var(--font-display);
 }
 
 .reading-tips ul {
@@ -783,492 +925,93 @@ body {
 }
 
 .reading-tips li {
-    color: #666;
-    margin-bottom: 8px;
-    padding-left: 20px;
+    color: var(--color-whisper);
+    margin-bottom: var(--space-sm);
+    padding-left: var(--space-lg);
     position: relative;
+    font-size: 0.9rem;
 }
 
 .reading-tips li::before {
-    content: "✨";
+    content: "—";
     position: absolute;
     left: 0;
+    color: var(--color-gold-dim);
 }
 
-/* 頁腳 */
+/* ========== 頁腳 ========== */
 .footer {
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
+    background: rgba(10, 10, 18, 0.6);
+    border-top: var(--border-subtle);
+    color: var(--color-whisper);
     text-align: center;
-    padding: 30px 0;
-    margin-top: 60px;
+    padding: var(--space-xl) 0;
+    margin-top: var(--space-3xl);
 }
 
 .footer p {
     margin: 0;
-    opacity: 0.8;
-}
-
-/* ========== 凱爾特十字牌陣 ========== */
-
-.celtic-cross-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 30px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.celtic-core,
-.celtic-timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.celtic-position {
-    text-align: center;
-}
-
-.celtic-position h4 {
-    color: #333;
-    margin-bottom: 8px;
-    font-size: 1rem;
-}
-
-.celtic-position .card-slot .card-back {
-    width: 80px;
-    height: 120px;
-    font-size: 2rem;
-}
-
-.celtic-result-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.celtic-result-item {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.celtic-item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.celtic-pos-badge {
-    background: #6c5ce7;
-    color: white;
-    padding: 3px 10px;
-    border-radius: 15px;
+    opacity: 0.6;
     font-size: 0.8rem;
-    font-weight: 500;
+    letter-spacing: 0.04em;
 }
 
-.celtic-result-item .card-image {
-    margin-bottom: 10px;
-    min-height: 100px;
-}
-
-.celtic-result-item .card-name {
-    font-size: 1rem;
-}
-
-.celtic-result-item .card-name-en {
-    font-size: 0.75rem;
-}
-
-.celtic-result-item .card-meaning p {
-    font-size: 0.8rem;
-    color: #666;
-    line-height: 1.4;
-}
-
-.celtic-explanation {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    padding: 40px;
-    margin-bottom: 40px;
-}
-
-.celtic-explanation h3 {
-    text-align: center;
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 30px;
-}
-
-.position-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-.position-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 10px;
-    background: #f8f9fa;
-    border-radius: 8px;
-}
-
-.pos-num {
-    background: #6c5ce7;
-    color: white;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: 600;
-    flex-shrink: 0;
-}
-
-@media (max-width: 768px) {
-    .celtic-cross-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .celtic-core {
-        order: 1;
-    }
-
-    .celtic-timeline {
-        order: 2;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .celtic-timeline .celtic-position {
-        width: calc(33% - 10px);
-    }
-
-    .celtic-result-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .position-list {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ========== 歷史記錄頁面 ========== */
-
-/* 歷史記錄操作按鈕 */
-.history-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.history-actions .action-button.danger {
-    background: #ff6b6b;
-}
-
-.history-actions .action-button.danger:hover {
-    background: #ff5252;
-}
-
-/* 歷史記錄統計 */
-.history-stats {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #666;
-}
-
-/* 歷史記錄列表 */
-.history-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* 歷史記錄項目 */
-.history-item {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.history-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.history-type {
-    font-weight: 600;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-}
-
-.history-type.single {
-    background: #e3f2fd;
-    color: #1565c0;
-}
-
-.history-type.three {
-    background: #f3e5f5;
-    color: #7b1fa2;
-}
-
-.history-time {
-    color: #999;
-    font-size: 0.9rem;
-}
-
-.history-question {
-    color: #666;
-    margin-bottom: 15px;
-    font-style: italic;
-}
-
-.history-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.mini-card {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 15px;
-    background: #f8f9fa;
-    border-radius: 10px;
-    font-size: 0.9rem;
-}
-
-.mini-card .card-name {
-    font-weight: 500;
-}
-
-.mini-card .card-position-label {
-    color: #999;
-    font-size: 0.8rem;
-}
-
-.mini-card .card-position {
-    padding: 3px 10px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
-
-.mini-card .card-position.upright {
-    background: #d4edda;
-    color: #155724;
-}
-
-.mini-card .card-position.reversed {
-    background: #f8d7da;
-    color: #721c24;
-}
-
-.history-actions-item {
-    display: flex;
-    gap: 10px;
-}
-
-.action-button.small {
-    padding: 8px 15px;
-    font-size: 0.85rem;
-}
-
-.action-button.danger {
-    background: #ff6b6b;
-}
-
-.action-button.danger:hover {
-    background: #ff5252;
-}
-
-/* 空狀態 */
-.empty-state {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.empty-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
-}
-
-.empty-state h3 {
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.empty-state p {
-    color: #666;
-    margin-bottom: 25px;
-}
-
-/* 彈窗 */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    padding: 20px;
-}
-
-.modal-content {
-    background: white;
-    border-radius: 20px;
-    max-width: 600px;
-    width: 100%;
-    max-height: 80vh;
-    overflow-y: auto;
-}
-
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #eee;
-}
-
-.modal-header h3 {
-    margin: 0;
-    color: #333;
-}
-
-.modal-close {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #999;
-}
-
-.modal-close:hover {
-    color: #333;
-}
-
-.modal-body {
-    padding: 20px;
-}
-
-.detail-time {
-    color: #999;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
-
-.detail-question {
-    margin-bottom: 20px;
-    padding: 15px;
-    background: #f8f9fa;
-    border-radius: 10px;
-}
-
-.detail-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.detail-card {
-    padding: 15px;
-    background: #f8f9fa;
-    border-radius: 10px;
-}
-
-.detail-card .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.detail-card .card-image {
-    margin-bottom: 10px;
-}
-
-.detail-card .card-info p {
-    margin: 5px 0;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* 響應式設計 */
+/* ========== 響應式設計 ========== */
 @media (max-width: 768px) {
     .container {
-        padding: 0 15px;
+        padding: 0 var(--space-md);
     }
-    
+
     .logo h1 {
-        font-size: 2rem;
+        font-size: 1.4rem;
     }
-    
+
     .hero-content h2 {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
-    
+
     .hero-content p {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
     }
-    
+
     .options-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .about-content,
     .knowledge-content,
     .explanation-content {
         grid-template-columns: 1fr;
     }
-    
+
     .nav {
         flex-direction: column;
-        gap: 10px;
+        gap: var(--space-xs);
+        align-items: center;
     }
-    
+
+    .nav-link {
+        padding: var(--space-sm) var(--space-md);
+    }
+
     .card-display {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .three-cards-layout {
         grid-template-columns: 1fr;
     }
-    
+
     .three-cards-display {
         grid-template-columns: 1fr;
     }
-    
+
     .result-header {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .result-actions {
         justify-content: center;
     }
@@ -1279,19 +1022,19 @@ body {
     .about-tarot,
     .tarot-knowledge,
     .three-cards-explanation {
-        padding: 20px;
+        padding: var(--space-lg);
     }
-    
+
     .option-card {
-        padding: 20px;
+        padding: var(--space-lg);
     }
-    
+
     .card-icon {
-        font-size: 3rem;
+        font-size: 2rem;
     }
-    
+
     .draw-button {
-        padding: 12px 30px;
-        font-size: 1rem;
+        padding: var(--space-sm) var(--space-lg);
+        font-size: 0.9rem;
     }
 }

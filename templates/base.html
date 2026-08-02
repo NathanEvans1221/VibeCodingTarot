@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap"
         rel="stylesheet">
     {% block head %}{% endblock %}
 </head>
@@ -18,7 +18,7 @@
         <!-- 頭部 -->
         <header class="header">
             <div class="logo">
-                <h1>🔮 VibeCodingTarot</h1>
+                <h1>VibeCodingTarot</h1>
                 <p>{% block subtitle %}探索內心的智慧，尋找人生的指引{% endblock %}</p>
             </div>
             {% block nav %}
