@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}VibeCodingTarot{% endblock %} - 塔羅牌占卜網站</title>
+    <title>{% block title %}VibeCodingTarot{% endblock %} v{{ version }} - 塔羅牌占卜網站</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +39,7 @@
 
         <!-- 頁腳 -->
         <footer class="footer">
-            <p>&copy; 2026 VibeCodingTarot. 探索內心的智慧，尋找人生的指引。</p>
+            <p>&copy; 2026 VibeCodingTarot v{{ version }}. 探索內心的智慧，尋找人生的指引。</p>
         </footer>
     </div>
 
