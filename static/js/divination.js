@@ -7,8 +7,17 @@ const Divination = {
     // localStorage 鍵名
     STORAGE_KEY: 'vibe_tarot_readings',
 
+    // HTML 轉義防護
+    escapeHtml(str) {
+        if (!str) return '';
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    },
+
     // 初始化
     init(csrfToken) {
+
         this.csrfToken = csrfToken;
         this.setupInputEffects();
     },
