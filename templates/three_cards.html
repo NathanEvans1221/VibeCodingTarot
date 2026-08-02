@@ -1,250 +1,205 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>三張牌占卜 - VibeCodingTarot</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <!-- 頭部 -->
-        <header class="header">
-            <div class="logo">
-                <h1>🔮 VibeCodingTarot</h1>
-                <p>三張牌占卜</p>
-            </div>
-            <nav class="nav">
-                <a href="/" class="nav-link">首頁</a>
-                <a href="/single-card" class="nav-link">單張牌</a>
-                <a href="/three-cards" class="nav-link active">三張牌</a>
-            </nav>
-        </header>
+{% extends 'base.html' %}
 
-        <!-- 主要內容 -->
-        <main class="main-content">
-            <section class="divination-section">
-                <div class="divination-header">
-                    <h2>三張牌占卜</h2>
-                    <p>過去、現在、未來，全面了解您的情況</p>
-                </div>
+{% block title %}三張牌占卜{% endblock %}
+{% block subtitle %}三張牌占卜{% endblock %}
 
-                <!-- 問題輸入 -->
-                <div class="question-section">
-                    <h3>請在心中默念您的問題</h3>
-                    <div class="question-input">
-                        <textarea id="questionInput" placeholder="請輸入您想詢問的問題，或保持空白讓塔羅牌為您指引..." rows="3"></textarea>
-                    </div>
-                    <div class="question-tips">
-                        <p>💡 提示：三張牌占卜適合複雜的情況，能夠從時間軸的角度為您提供全面的指引。</p>
-                    </div>
-                </div>
-
-                <!-- 抽牌區域 -->
-                <div class="card-drawing-area">
-                    <div class="three-cards-layout">
-                        <div class="card-position">
-                            <h4>過去</h4>
-                            <div class="card-slot" id="pastCard">
-                                <div class="card-back">🃏</div>
-                            </div>
-                        </div>
-                        <div class="card-position">
-                            <h4>現在</h4>
-                            <div class="card-slot" id="presentCard">
-                                <div class="card-back">🃏</div>
-                            </div>
-                        </div>
-                        <div class="card-position">
-                            <h4>未來</h4>
-                            <div class="card-slot" id="futureCard">
-                                <div class="card-back">🃏</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="draw-button-container">
-                        <button id="drawButton" class="draw-button" onclick="drawThreeCards()">
-                            <span class="button-text">抽取三張塔羅牌</span>
-                            <span class="button-icon">✨</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- 結果區域 -->
-                <div class="result-section" id="resultSection" style="display: none;">
-                    <div class="result-header">
-                        <h3>您的塔羅牌指引</h3>
-                        <div class="result-actions">
-                            <button class="action-button" onclick="drawThreeCards()">重新占卜</button>
-                            <button class="action-button" onclick="shareResult()">分享結果</button>
-                        </div>
-                    </div>
-                    
-                    <div class="three-cards-result" id="threeCardsResult">
-                        <!-- 動態內容將在這裡顯示 -->
-                    </div>
-                </div>
-
-                <!-- 載入動畫 -->
-                <div class="loading-section" id="loadingSection" style="display: none;">
-                    <div class="loading-spinner"></div>
-                    <p>塔羅牌正在為您指引方向...</p>
-                </div>
-            </section>
-
-            <!-- 三張牌占卜說明 -->
-            <section class="three-cards-explanation">
-                <h3>三張牌占卜的意義</h3>
-                <div class="explanation-content">
-                    <div class="position-explanation">
-                        <div class="position-item">
-                            <h4>🔮 過去</h4>
-                            <p>代表影響當前情況的過去因素，包括已發生的事件、過去的決定和經驗教訓。</p>
-                        </div>
-                        <div class="position-item">
-                            <h4>🌟 現在</h4>
-                            <p>代表當前的情況和您現在所處的狀態，包括當下的挑戰和機會。</p>
-                        </div>
-                        <div class="position-item">
-                            <h4>✨ 未來</h4>
-                            <p>代表基於當前軌跡可能出現的結果，以及您需要關注的未來發展。</p>
-                        </div>
-                    </div>
-                    <div class="reading-tips">
-                        <h4>解讀技巧</h4>
-                        <ul>
-                            <li>將三張牌視為一個完整的故事</li>
-                            <li>注意牌與牌之間的關聯和對比</li>
-                            <li>考慮正位和逆位的整體平衡</li>
-                            <li>結合您的實際情況進行解讀</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- 頁腳 -->
-        <footer class="footer">
-            <p>&copy; 2024 VibeCodingTarot. 探索內心的智慧，尋找人生的指引。</p>
-        </footer>
+{% block content %}
+<section class="divination-section">
+    <div class="divination-header">
+        <h2>三張牌占卜</h2>
+        <p>過去、現在、未來，全面了解您的情況</p>
     </div>
 
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    <script>
-        // 三張牌占卜功能
-        async function drawThreeCards() {
-            const question = document.getElementById('questionInput').value.trim();
-            const loadingSection = document.getElementById('loadingSection');
-            const resultSection = document.getElementById('resultSection');
-            const drawButton = document.getElementById('drawButton');
-            
-            // 顯示載入動畫
-            loadingSection.style.display = 'block';
-            resultSection.style.display = 'none';
-            drawButton.disabled = true;
-            
-            try {
-                const response = await fetch('/api/draw-three', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        question: question
-                    })
-                });
-                
-                const data = await response.json();
-                
-                if (data.success) {
-                    // 模擬抽牌動畫
-                    setTimeout(() => {
-                        displayThreeCardsResult(data.data);
-                        loadingSection.style.display = 'none';
-                        resultSection.style.display = 'block';
-                        drawButton.disabled = false;
-                    }, 3000);
-                } else {
-                    throw new Error(data.message);
-                }
-            } catch (error) {
-                console.error('抽牌失敗:', error);
-                alert('抽牌失敗，請稍後再試');
-                loadingSection.style.display = 'none';
-                drawButton.disabled = false;
+    <!-- 問題輸入 -->
+    <div class="question-section">
+        <h3>請在心中默念您的問題</h3>
+        <div class="question-input">
+            <textarea id="questionInput" placeholder="請輸入您想詢問的問題，或保持空白讓塔羅牌為您指引..." rows="3"></textarea>
+        </div>
+        <div class="question-tips">
+            <p>💡 提示：三張牌占卜適合複雜的情況，能夠從時間軸的角度為您提供全面的指引。</p>
+        </div>
+    </div>
+
+    <!-- 抽牌區域 -->
+    <div class="card-drawing-area">
+        <div class="three-cards-layout">
+            <div class="card-position">
+                <h4>過去</h4>
+                <div class="card-slot" id="pastCard">
+                    <div class="card-back">🃏</div>
+                </div>
+            </div>
+            <div class="card-position">
+                <h4>現在</h4>
+                <div class="card-slot" id="presentCard">
+                    <div class="card-back">🃏</div>
+                </div>
+            </div>
+            <div class="card-position">
+                <h4>未來</h4>
+                <div class="card-slot" id="futureCard">
+                    <div class="card-back">🃏</div>
+                </div>
+            </div>
+        </div>
+        <div class="draw-button-container">
+            <button id="drawButton" class="draw-button" onclick="drawThreeCards()">
+                <span class="button-text">抽取三張塔羅牌</span>
+                <span class="button-icon">✨</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 結果區域 -->
+    <div class="result-section" id="resultSection" style="display: none;">
+        <div class="result-header">
+            <h3>您的塔羅牌指引</h3>
+            <div class="result-actions">
+                <button class="action-button" onclick="drawThreeCards()">重新占卜</button>
+                <button class="action-button" onclick="shareResult()">分享結果</button>
+            </div>
+        </div>
+
+        <div class="three-cards-result" id="threeCardsResult">
+            <!-- 動態內容將在這裡顯示 -->
+        </div>
+    </div>
+
+    <!-- 載入動畫 -->
+    <div class="loading-section" id="loadingSection" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p>塔羅牌正在為您指引方向...</p>
+    </div>
+</section>
+
+<!-- 三張牌占卜說明 -->
+<section class="three-cards-explanation">
+    <h3>三張牌占卜的意義</h3>
+    <div class="explanation-content">
+        <div class="position-explanation">
+            <div class="position-item">
+                <h4>🔮 過去</h4>
+                <p>代表影響當前情況的過去因素，包括已發生的事件、過去的決定和經驗教訓。</p>
+            </div>
+            <div class="position-item">
+                <h4>🌟 現在</h4>
+                <p>代表當前的情況和您現在所處的狀態，包括當下的挑戰和機會。</p>
+            </div>
+            <div class="position-item">
+                <h4>✨ 未來</h4>
+                <p>代表基於當前軌跡可能出現的結果，以及您需要關注的未來發展。</p>
+            </div>
+        </div>
+        <div class="reading-tips">
+            <h4>解讀技巧</h4>
+            <ul>
+                <li>將三張牌視為一個完整的故事</li>
+                <li>注意牌與牌之間的關聯和對比</li>
+                <li>考慮正位和逆位的整體平衡</li>
+                <li>結合您的實際情況進行解讀</li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const CSRF_TOKEN = '{{ csrf_token() }}';
+
+    async function drawThreeCards() {
+        const question = document.getElementById('questionInput').value.trim();
+        const loadingSection = document.getElementById('loadingSection');
+        const resultSection = document.getElementById('resultSection');
+        const drawButton = document.getElementById('drawButton');
+
+        loadingSection.style.display = 'block';
+        resultSection.style.display = 'none';
+        drawButton.disabled = true;
+
+        try {
+            const response = await fetch('/api/draw-three', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-Token': CSRF_TOKEN
+                },
+                body: JSON.stringify({ question })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setTimeout(() => {
+                    displayThreeCardsResult(data.data);
+                    loadingSection.style.display = 'none';
+                    resultSection.style.display = 'block';
+                    drawButton.disabled = false;
+                }, 3000);
+            } else {
+                throw new Error(data.message);
             }
+        } catch (error) {
+            console.error('抽牌失敗:', error);
+            alert('抽牌失敗，請稍後再試');
+            loadingSection.style.display = 'none';
+            drawButton.disabled = false;
         }
-        
-        function displayThreeCardsResult(data) {
-            const threeCardsResult = document.getElementById('threeCardsResult');
-            const cards = data.cards;
-            
-            threeCardsResult.innerHTML = `
-                <div class="three-cards-display">
-                    ${cards.map((cardData, index) => `
-                        <div class="card-result-item">
-                            <div class="card-header">
-                                <h4>${cardData.position}</h4>
-                                <div class="card-position-badge ${cardData.is_reversed ? 'reversed' : 'upright'}">
-                                    ${cardData.is_reversed ? '逆位' : '正位'}
-                                </div>
-                            </div>
-                            <div class="card-image ${cardData.is_reversed ? 'reversed' : ''}">
-                                <div class="card-face">
-                                    <div class="card-name">${cardData.card.name}</div>
-                                    <div class="card-name-en">${cardData.card.name_en}</div>
-                                    <div class="card-suit">${cardData.card.suit}</div>
-                                </div>
-                            </div>
-                            <div class="card-meaning">
-                                <h5>${cardData.is_reversed ? '逆位含義' : '正位含義'}</h5>
-                                <p>${cardData.is_reversed ? cardData.card.reversed_meaning : cardData.card.upright_meaning}</p>
+    }
+
+    function displayThreeCardsResult(data) {
+        const threeCardsResult = document.getElementById('threeCardsResult');
+        const cards = data.cards;
+
+        threeCardsResult.innerHTML = `
+            <div class="three-cards-display">
+                ${cards.map((cardData, index) => `
+                    <div class="card-result-item">
+                        <div class="card-header">
+                            <h4>${cardData.position}</h4>
+                            <div class="card-position-badge ${cardData.is_reversed ? 'reversed' : 'upright'}">
+                                ${cardData.is_reversed ? '逆位' : '正位'}
                             </div>
                         </div>
-                    `).join('')}
-                </div>
-                
-                <div class="overall-interpretation">
-                    <h4>整體解讀</h4>
-                    <div class="interpretation-content">
-                        <p>基於您抽取的三張牌，我們可以看到一個完整的故事：</p>
-                        <ul>
-                            <li><strong>過去（${cards[0].card.name}）</strong>：${cards[0].is_reversed ? cards[0].card.reversed_meaning : cards[0].card.upright_meaning}</li>
-                            <li><strong>現在（${cards[1].card.name}）</strong>：${cards[1].is_reversed ? cards[1].card.reversed_meaning : cards[1].card.upright_meaning}</li>
-                            <li><strong>未來（${cards[2].card.name}）</strong>：${cards[2].is_reversed ? cards[2].card.reversed_meaning : cards[2].card.upright_meaning}</li>
-                        </ul>
-                        <div class="guidance">
-                            <h5>指引建議</h5>
-                            <p>這三張牌告訴我們，您的情況正在經歷一個完整的發展過程。請仔細思考每張牌的含義，並結合您的實際情況來理解這個指引。</p>
+                        <div class="card-image ${cardData.is_reversed ? 'reversed' : ''}">
+                            <div class="card-face">
+                                <div class="card-name">${cardData.card.name}</div>
+                                <div class="card-name-en">${cardData.card.name_en}</div>
+                                <div class="card-suit">${cardData.card.suit}</div>
+                            </div>
+                        </div>
+                        <div class="card-meaning">
+                            <h5>${cardData.is_reversed ? '逆位含義' : '正位含義'}</h5>
+                            <p>${cardData.is_reversed ? cardData.card.reversed_meaning : cardData.card.upright_meaning}</p>
                         </div>
                     </div>
+                `).join('')}
+            </div>
+
+            <div class="overall-interpretation">
+                <h4>整體解讀</h4>
+                <div class="interpretation-content">
+                    <p>基於您抽取的三張牌，我們可以看到一個完整的故事：</p>
+                    <ul>
+                        <li><strong>過去（${cards[0].card.name}）</strong>：${cards[0].is_reversed ? cards[0].card.reversed_meaning : cards[0].card.upright_meaning}</li>
+                        <li><strong>現在（${cards[1].card.name}）</strong>：${cards[1].is_reversed ? cards[1].card.reversed_meaning : cards[1].card.upright_meaning}</li>
+                        <li><strong>未來（${cards[2].card.name}）</strong>：${cards[2].is_reversed ? cards[2].card.reversed_meaning : cards[2].card.upright_meaning}</li>
+                    </ul>
+                    <div class="guidance">
+                        <h5>指引建議</h5>
+                        <p>這三張牌告訴我們，您的情況正在經歷一個完整的發展過程。請仔細思考每張牌的含義，並結合您的實際情況來理解這個指引。</p>
+                    </div>
                 </div>
-                
-                ${data.question ? `
-                <div class="question-context">
-                    <h4>您的問題</h4>
-                    <p>"${data.question}"</p>
-                </div>
-                ` : ''}
-            `;
-        }
-        
-        function shareResult() {
-            if (navigator.share) {
-                navigator.share({
-                    title: '我的三張牌塔羅占卜結果',
-                    text: '我在 VibeCodingTarot 進行了三張牌塔羅占卜，快來看看結果吧！',
-                    url: window.location.href
-                });
-            } else {
-                // 複製到剪貼板
-                const resultText = document.querySelector('.three-cards-result').innerText;
-                navigator.clipboard.writeText(resultText).then(() => {
-                    alert('占卜結果已複製到剪貼板！');
-                });
-            }
-        }
-    </script>
-</body>
-</html>
+            </div>
+
+            ${data.question ? `
+            <div class="question-context">
+                <h4>您的問題</h4>
+                <p>"${escapeHtml(data.question)}"</p>
+            </div>
+            ` : ''}
+        `;
+    }
+</script>
+{% endblock %}
