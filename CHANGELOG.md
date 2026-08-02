@@ -5,6 +5,18 @@
 格式基於 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號遵循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [Unreleased]
+
+### 新增
+- 整合 `graphify` 知識圖譜工具：建立 `graphify-out/` 知識圖譜（107 節點、148 邊、11 社群），含 `graph.html` 可互動視覺化與 `GRAPH_REPORT.md` 完整稽核報告
+- 安裝 graphify `post-commit` 自動重建 hook（僅重建程式碼差異，無 LLM 呼叫）
+- 安裝 graphify `post-checkout` 同步 hook
+- 註冊 `graph.json` 專用 merge driver 至 `.gitattributes`
+
+### 變更
+- `.gitignore` 新增 graphify-out 本機狀態與 workflow temp 排除規則（追蹤核心產物）
+- `.gitignore` 新增 `.claude/` 排除（Claude Code 本機設定）
+
 ## [1.0.2] - 2026-08-02
 
 ### 修復

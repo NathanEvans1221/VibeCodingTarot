@@ -208,3 +208,24 @@ __marimo__/
 
 # MiMoCode
 .mimocode/
+
+# graphify - track core artifacts (graph.json, graph.html, GRAPH_REPORT.md,
+# manifest.json, cost.json, .graphify_labels.json), but ignore machine-local
+# state and workflow temp files. The post-commit hook and merge driver are
+# designed for graphify-out/ to be tracked in git.
+graphify-out/.graphify_python
+graphify-out/.graphify_root
+graphify-out/.chunk*.txt
+graphify-out/.graphify_chunk_*.json
+graphify-out/.graphify_detect.json
+graphify-out/.graphify_ast.json
+graphify-out/.graphify_semantic.json
+graphify-out/.graphify_semantic_new.json
+graphify-out/.graphify_extract.json
+graphify-out/.graphify_analysis.json
+graphify-out/.graphify_cached.json
+graphify-out/.graphify_uncached.txt
+graphify-out/cache/
+
+# Claude Code per-machine settings
+.claude/
