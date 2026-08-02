@@ -106,45 +106,30 @@
 
 {% block scripts %}
 <script>
-    const CSRF_TOKEN = '{{ csrf_token() }}';
+    // 初始化占卜模組
+    Divination.init('{{ csrf_token() }}');
 
     async function drawThreeCards() {
         const question = document.getElementById('questionInput').value.trim();
-        const loadingSection = document.getElementById('loadingSection');
-        const resultSection = document.getElementById('resultSection');
-        const drawButton = document.getElementById('drawButton');
-
-        loadingSection.style.display = 'block';
-        resultSection.style.display = 'none';
-        drawButton.disabled = true;
+        
+        Divination.showLoading(true);
 
         try {
-            const response = await fetch('/api/draw-three', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-Token': CSRF_TOKEN
-                },
-                body: JSON.stringify({ question })
-            });
-
-            const data = await response.json();
-
-            if (data.success) {
-                setTimeout(() => {
-                    displayThreeCardsResult(data.data);
-                    loadingSection.style.display = 'none';
-                    resultSection.style.display = 'block';
-                    drawButton.disabled = false;
-                }, 3000);
-            } else {
-                throw new Error(data.message);
-            }
+            const data = await Divination.drawCards('three', question);
+            
+            setTimeout(() => {
+                displayThreeCardsResult(data);
+                Divination.showResult(true);
+                
+                // 儲存占卜記錄
+                Divination.saveReading({
+                    type: 'three',
+                    question: question,
+                    cards: data.cards
+                });
+            }, 3000);
         } catch (error) {
-            console.error('抽牌失敗:', error);
-            alert('抽牌失敗，請稍後再試');
-            loadingSection.style.display = 'none';
-            drawButton.disabled = false;
+            Divination.handleError(error, '抽牌失敗，請稍後再試');
         }
     }
 
@@ -196,7 +181,7 @@
             ${data.question ? `
             <div class="question-context">
                 <h4>您的問題</h4>
-                <p>"${escapeHtml(data.question)}"</p>
+                <p>"${Divination.escapeHtml(data.question)}"</p>
             </div>
             ` : ''}
         `;
