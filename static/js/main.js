@@ -1,13 +1,38 @@
 // 主要JavaScript功能
 
+// HTML 轉義函數，防止 XSS
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// 分享結果
+function shareResult(defaultTitle, defaultText) {
+    if (navigator.share) {
+        navigator.share({
+            title: defaultTitle || '我的塔羅牌占卜結果',
+            text: defaultText || '我在 VibeCodingTarot 進行了塔羅牌占卜，快來看看結果吧！',
+            url: window.location.href
+        });
+    } else {
+        const resultText = document.querySelector('.card-result, .three-cards-result')?.innerText;
+        if (resultText) {
+            navigator.clipboard.writeText(resultText).then(() => {
+                alert('占卜結果已複製到剪貼板！');
+            });
+        }
+    }
+}
+
 // 頁面載入完成後執行
 document.addEventListener('DOMContentLoaded', function() {
     // 初始化頁面
     initializePage();
-    
+
     // 添加動畫效果
     addAnimationEffects();
-    
+
     // 設置事件監聽器
     setupEventListeners();
 });
@@ -225,59 +250,14 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// 工具函數
-const utils = {
-    // 防抖函數
-    debounce: function(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    },
-    
-    // 節流函數
-    throttle: function(func, limit) {
-        let inThrottle;
-        return function() {
-            const args = arguments;
-            const context = this;
-            if (!inThrottle) {
-                func.apply(context, args);
-                inThrottle = true;
-                setTimeout(() => inThrottle = false, limit);
-            }
-        };
-    },
-    
-    // 格式化日期
-    formatDate: function(date) {
-        return new Intl.DateTimeFormat('zh-TW', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-        }).format(date);
-    },
-    
-    // 生成隨機ID
-    generateId: function() {
-        return Math.random().toString(36).substr(2, 9);
-    }
-};
-
 // 導出函數供其他腳本使用
 window.VibeCodingTarot = {
+    escapeHtml,
+    shareResult,
     goToSingleCard,
     goToThreeCards,
     animateCardDraw,
     animateResultShow,
     handleError,
-    showSuccessMessage,
-    utils
+    showSuccessMessage
 };

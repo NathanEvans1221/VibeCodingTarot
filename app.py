@@ -44,17 +44,17 @@ tarot_cards = load_tarot_cards()
 @app.route('/')
 def index():
     """主頁"""
-    return render_template('index.html')
+    return render_template('index.html', active_page='index')
 
 @app.route('/single-card')
 def single_card():
     """單張牌占卜頁面"""
-    return render_template('single_card.html')
+    return render_template('single_card.html', active_page='single')
 
 @app.route('/three-cards')
 def three_cards():
     """三張牌占卜頁面"""
-    return render_template('three_cards.html')
+    return render_template('three_cards.html', active_page='three')
 
 @app.route('/api/draw-single', methods=['POST'])
 def draw_single_card():
