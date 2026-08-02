@@ -2,6 +2,7 @@
 from flask import Flask, render_template, request, jsonify, session
 import json
 import random
+import logging
 from datetime import datetime
 import os
 import secrets
@@ -11,6 +12,20 @@ app = Flask(__name__)
 # 配置：SECRET_KEY 從環境變數讀取，未設定時自動生成隨機密鑰
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') or secrets.token_hex(32)
 app.config['JSON_AS_ASCII'] = False  # 支援中文JSON
+
+# 設定 logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+# 應用常數
+APP_CONSTANTS = {
+    'THREE_CARDS_COUNT': 3,
+    'DEFAULT_PORT': 5000,
+    'MAX_READINGS': 100
+}
 
 
 def generate_csrf_token():
@@ -44,46 +59,52 @@ tarot_cards = load_tarot_cards()
 @app.route('/')
 def index():
     """主頁"""
+    logger.info('訪問首頁')
     return render_template('index.html', active_page='index')
 
 @app.route('/single-card')
 def single_card():
     """單張牌占卜頁面"""
+    logger.info('訪問單張牌占卜頁面')
     return render_template('single_card.html', active_page='single')
 
 @app.route('/three-cards')
 def three_cards():
     """三張牌占卜頁面"""
+    logger.info('訪問三張牌占卜頁面')
     return render_template('three_cards.html', active_page='three')
 
 @app.route('/api/draw-single', methods=['POST'])
 def draw_single_card():
     """抽取單張牌API"""
     if not validate_csrf_token():
+        logger.warning('CSRF 驗證失敗')
         return jsonify({'success': False, 'message': 'CSRF 驗證失敗'}), 403
     try:
         data = request.get_json()
         question = data.get('question', '')
-        
+
         # 隨機選擇一張牌
         card = random.choice(tarot_cards)
-        
+
         # 隨機決定正位或逆位
         is_reversed = random.choice([True, False])
-        
+
         result = {
             'card': card,
             'is_reversed': is_reversed,
             'question': question,
             'timestamp': datetime.now().isoformat()
         }
-        
+
+        logger.info(f'單張牌抽取成功: {card["name"]}')
         return jsonify({
             'success': True,
             'data': result,
             'message': '抽牌成功'
         })
     except Exception as e:
+        logger.error(f'單張牌抽取失敗: {str(e)}')
         return jsonify({
             'success': False,
             'message': f'抽牌失敗: {str(e)}'
@@ -93,36 +114,41 @@ def draw_single_card():
 def draw_three_cards():
     """抽取三張牌API"""
     if not validate_csrf_token():
+        logger.warning('CSRF 驗證失敗')
         return jsonify({'success': False, 'message': 'CSRF 驗證失敗'}), 403
     try:
         data = request.get_json()
         question = data.get('question', '')
-        
+
         # 隨機選擇三張不同的牌
-        selected_cards = random.sample(tarot_cards, 3)
-        
+        selected_cards = random.sample(tarot_cards, APP_CONSTANTS['THREE_CARDS_COUNT'])
+
         # 為每張牌隨機決定正位或逆位
+        positions = ['過去', '現在', '未來']
         cards_with_position = []
         for i, card in enumerate(selected_cards):
             is_reversed = random.choice([True, False])
             cards_with_position.append({
                 'card': card,
                 'is_reversed': is_reversed,
-                'position': ['過去', '現在', '未來'][i]
+                'position': positions[i]
             })
-        
+
         result = {
             'cards': cards_with_position,
             'question': question,
             'timestamp': datetime.now().isoformat()
         }
-        
+
+        card_names = [c['card']['name'] for c in cards_with_position]
+        logger.info(f'三張牌抽取成功: {", ".join(card_names)}')
         return jsonify({
             'success': True,
             'data': result,
             'message': '抽牌成功'
         })
     except Exception as e:
+        logger.error(f'三張牌抽取失敗: {str(e)}')
         return jsonify({
             'success': False,
             'message': f'抽牌失敗: {str(e)}'
@@ -134,17 +160,20 @@ def get_card_info(card_id):
     try:
         card = next((c for c in tarot_cards if c['id'] == card_id), None)
         if card:
+            logger.info(f'查詢牌資訊: {card["name"]}')
             return jsonify({
                 'success': True,
                 'data': card,
                 'message': '獲取牌信息成功'
             })
         else:
+            logger.warning(f'找不到牌: {card_id}')
             return jsonify({
                 'success': False,
                 'message': '找不到指定的牌'
             }), 404
     except Exception as e:
+        logger.error(f'獲取牌信息失敗: {str(e)}')
         return jsonify({
             'success': False,
             'message': f'獲取牌信息失敗: {str(e)}'
@@ -154,20 +183,23 @@ def get_card_info(card_id):
 def save_reading():
     """保存占卜記錄API"""
     if not validate_csrf_token():
+        logger.warning('CSRF 驗證失敗')
         return jsonify({'success': False, 'message': 'CSRF 驗證失敗'}), 403
     try:
         data = request.get_json()
-        
+
         # 這裡可以實現保存到數據庫的邏輯
         # 目前只是簡單返回成功
         reading_id = f"reading_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-        
+
+        logger.info(f'占卜記錄保存成功: {reading_id}')
         return jsonify({
             'success': True,
             'data': {'reading_id': reading_id},
             'message': '占卜記錄保存成功'
         })
     except Exception as e:
+        logger.error(f'保存占卜記錄失敗: {str(e)}')
         return jsonify({
             'success': False,
             'message': f'保存占卜記錄失敗: {str(e)}'
@@ -180,7 +212,6 @@ if __name__ == '__main__':
     os.makedirs('static/js', exist_ok=True)
     os.makedirs('static/images/cards', exist_ok=True)
     os.makedirs('data', exist_ok=True)
-    
-    # Windows 上 Flask/Werkzeug 停止服務時常見的關閉訊息（WinError 10038），按 CTRL+C 後關閉 socket 觸發，屬於無害異常，可忽略。
-    # 若想消除/減少這個訊息，可用以下參數： use_reloader=False
-    app.run(debug=True, host='0.0.0.0', port=5000, use_reloader=False)
+
+    logger.info('VibeCodingTarot 應用啟動')
+    app.run(debug=True, host='0.0.0.0', port=APP_CONSTANTS['DEFAULT_PORT'], use_reloader=False)
