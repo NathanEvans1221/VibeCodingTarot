@@ -16,11 +16,14 @@
 - 建立 `CONTRIBUTING.md` - 貢獻指南
 - 建立 `docs/API.md` - API 詳細文檔
 - 建立 `docs/DECISIONS.md` - 架構決策紀錄
+- 新增 Flask logging 記錄請求與錯誤
 
 ### 重構
 - 抽取共同 JS 邏輯到 `divination.js` 模組
 - 簡化 `single_card.html` 和 `three_cards.html` 的腳本
 - 使用 `Divination` 模組統一處理 API 呼叫、載入狀態、錯誤處理
+- 清理 `main.js` 未使用代碼（escapeHtml, handleError, showSuccessMessage）
+- 提取魔法數字為命名常數（CONSTANTS, APP_CONSTANTS）
 
 ### 塔羅牌占卜網站初始版本
 - 單張牌占卜功能

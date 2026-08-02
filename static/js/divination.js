@@ -96,17 +96,20 @@ const Divination = {
             font-family: 'Noto Sans TC', sans-serif;
         `;
         errorDiv.textContent = message;
-        
+
         document.body.appendChild(errorDiv);
-        
+
+        const displayTime = window.CONSTANTS?.MESSAGE_DISPLAY_TIME || 3000;
+        const animTime = window.CONSTANTS?.MESSAGE_ANIMATION_TIME || 300;
+
         setTimeout(() => {
             errorDiv.style.animation = 'slideOut 0.3s ease';
             setTimeout(() => {
                 if (errorDiv.parentNode) {
                     errorDiv.parentNode.removeChild(errorDiv);
                 }
-            }, 300);
-        }, 3000);
+            }, animTime);
+        }, displayTime);
     },
 
     // 顯示成功訊息
@@ -127,17 +130,20 @@ const Divination = {
             font-family: 'Noto Sans TC', sans-serif;
         `;
         successDiv.textContent = message;
-        
+
         document.body.appendChild(successDiv);
-        
+
+        const displayTime = window.CONSTANTS?.MESSAGE_DISPLAY_TIME || 3000;
+        const animTime = window.CONSTANTS?.MESSAGE_ANIMATION_TIME || 300;
+
         setTimeout(() => {
             successDiv.style.animation = 'slideOut 0.3s ease';
             setTimeout(() => {
                 if (successDiv.parentNode) {
                     successDiv.parentNode.removeChild(successDiv);
                 }
-            }, 300);
-        }, 3000);
+            }, animTime);
+        }, displayTime);
     },
 
     // ========== 占卜記錄持久化 ==========
@@ -164,8 +170,9 @@ const Divination = {
             };
             readings.unshift(newReading); // 新記錄加在最前面
             
-            // 最多保留 100 筆記錄
-            if (readings.length > 100) {
+            // 最多保留 N 筆記錄
+            const maxReadings = window.CONSTANTS?.MAX_READINGS || 100;
+            if (readings.length > maxReadings) {
                 readings.pop();
             }
             
