@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, request, jsonify, session
+from flask import Flask, render_template, request, jsonify, session, make_response
+from flask_compress import Compress
 import json
 import random
 import logging
@@ -13,6 +14,18 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') or secrets.token_hex(32)
 app.config['JSON_AS_ASCII'] = False  # 支援中文JSON
 
+# 啟用 gzip 壓縮
+app.config['COMPRESS_MIMETYPES'] = [
+    'text/html',
+    'text/css',
+    'text/xml',
+    'application/json',
+    'application/javascript',
+    'text/javascript'
+]
+app.config['COMPRESS_MIN_SIZE'] = 500
+Compress(app)
+
 # 設定 logging
 logging.basicConfig(
     level=logging.INFO,
@@ -24,7 +37,9 @@ logger = logging.getLogger(__name__)
 APP_CONSTANTS = {
     'THREE_CARDS_COUNT': 3,
     'DEFAULT_PORT': 5000,
-    'MAX_READINGS': 100
+    'MAX_READINGS': 100,
+    'STATIC_CACHE_MAX_AGE': 31536000,  # 1 年
+    'HTML_CACHE_MAX_AGE': 3600  # 1 小時
 }
 
 
@@ -60,19 +75,25 @@ tarot_cards = load_tarot_cards()
 def index():
     """主頁"""
     logger.info('訪問首頁')
-    return render_template('index.html', active_page='index')
+    response = make_response(render_template('index.html', active_page='index'))
+    response.headers['Cache-Control'] = f'public, max-age={APP_CONSTANTS["HTML_CACHE_MAX_AGE"]}'
+    return response
 
 @app.route('/single-card')
 def single_card():
     """單張牌占卜頁面"""
     logger.info('訪問單張牌占卜頁面')
-    return render_template('single_card.html', active_page='single')
+    response = make_response(render_template('single_card.html', active_page='single'))
+    response.headers['Cache-Control'] = f'public, max-age={APP_CONSTANTS["HTML_CACHE_MAX_AGE"]}'
+    return response
 
 @app.route('/three-cards')
 def three_cards():
     """三張牌占卜頁面"""
     logger.info('訪問三張牌占卜頁面')
-    return render_template('three_cards.html', active_page='three')
+    response = make_response(render_template('three_cards.html', active_page='three'))
+    response.headers['Cache-Control'] = f'public, max-age={APP_CONSTANTS["HTML_CACHE_MAX_AGE"]}'
+    return response
 
 @app.route('/api/draw-single', methods=['POST'])
 def draw_single_card():
