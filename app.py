@@ -74,6 +74,17 @@ def validate_csrf_token():
     token = request.headers.get('X-CSRF-Token') or (request.get_json() or {}).get('_csrf_token')
     return token and token == session.get('_csrf_token')
 
+# 讀取版本號
+def get_version():
+    """讀取版本號"""
+    try:
+        with open('VERSION', 'r', encoding='utf-8') as f:
+            return f.read().strip()
+    except FileNotFoundError:
+        return '0.0.0'
+
+APP_VERSION = get_version()
+
 # 載入塔羅牌數據
 def load_tarot_cards():
     """載入塔羅牌數據"""
@@ -90,7 +101,7 @@ tarot_cards = load_tarot_cards()
 def index():
     """主頁"""
     logger.info('訪問首頁')
-    response = make_response(render_template('index.html', active_page='index'))
+    response = make_response(render_template('index.html', active_page='index', version=APP_VERSION))
     response.headers['Cache-Control'] = f'public, max-age={APP_CONSTANTS["HTML_CACHE_MAX_AGE"]}'
     return response
 
@@ -98,7 +109,7 @@ def index():
 def single_card():
     """單張牌占卜頁面"""
     logger.info('訪問單張牌占卜頁面')
-    response = make_response(render_template('single_card.html', active_page='single'))
+    response = make_response(render_template('single_card.html', active_page='single', version=APP_VERSION))
     response.headers['Cache-Control'] = f'public, max-age={APP_CONSTANTS["HTML_CACHE_MAX_AGE"]}'
     return response
 
@@ -106,7 +117,7 @@ def single_card():
 def three_cards():
     """三張牌占卜頁面"""
     logger.info('訪問三張牌占卜頁面')
-    response = make_response(render_template('three_cards.html', active_page='three'))
+    response = make_response(render_template('three_cards.html', active_page='three', version=APP_VERSION))
     response.headers['Cache-Control'] = f'public, max-age={APP_CONSTANTS["HTML_CACHE_MAX_AGE"]}'
     return response
 
@@ -114,7 +125,7 @@ def three_cards():
 def history():
     """占卜歷史記錄頁面"""
     logger.info('訪問占卜歷史記錄頁面')
-    response = make_response(render_template('history.html', active_page='history'))
+    response = make_response(render_template('history.html', active_page='history', version=APP_VERSION))
     response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
     return response
 
@@ -122,7 +133,7 @@ def history():
 def celtic_cross():
     """凱爾特十字占卜頁面"""
     logger.info('訪問凱爾特十字占卜頁面')
-    response = make_response(render_template('celtic_cross.html', active_page='celtic'))
+    response = make_response(render_template('celtic_cross.html', active_page='celtic', version=APP_VERSION))
     response.headers['Cache-Control'] = f'public, max-age={APP_CONSTANTS["HTML_CACHE_MAX_AGE"]}'
     return response
 
