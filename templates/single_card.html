@@ -83,24 +83,23 @@
 
     async function drawSingleCard() {
         const question = document.getElementById('questionInput').value.trim();
-        
+
         Divination.showLoading(true);
 
         try {
             const data = await Divination.drawCards('single', question);
-            
-            setTimeout(() => {
-                displaySingleCardResult(data);
-                Divination.showResult(true);
-                
-                // 儲存占卜記錄
-                Divination.saveReading({
-                    type: 'single',
-                    question: question,
-                    card: data.card,
-                    is_reversed: data.is_reversed
-                });
-            }, 2000);
+
+            // 直接顯示結果，不使用假延遲
+            displaySingleCardResult(data);
+            Divination.showResult(true);
+
+            // 儲存占卜記錄
+            Divination.saveReading({
+                type: 'single',
+                question: question,
+                card: data.card,
+                is_reversed: data.is_reversed
+            });
         } catch (error) {
             Divination.handleError(error, '抽牌失敗，請稍後再試');
         }

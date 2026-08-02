@@ -17,6 +17,9 @@
 - 建立 `docs/API.md` - API 詳細文檔
 - 建立 `docs/DECISIONS.md` - 架構決策紀錄
 - 新增 Flask logging 記錄請求與錯誤
+- 新增 Flask gzip 壓縮（flask-compress）
+- 新增 HTML 頁面快取控制（1 小時）
+- 新增字體 preconnect 優化載入速度
 
 ### 重構
 - 抽取共同 JS 邏輯到 `divination.js` 模組
@@ -24,6 +27,7 @@
 - 使用 `Divination` 模組統一處理 API 呼叫、載入狀態、錯誤處理
 - 清理 `main.js` 未使用代碼（escapeHtml, handleError, showSuccessMessage）
 - 提取魔法數字為命名常數（CONSTANTS, APP_CONSTANTS）
+- 移除假延遲動畫（setTimeout 2000/3000ms）
 
 ### 塔羅牌占卜網站初始版本
 - 單張牌占卜功能
