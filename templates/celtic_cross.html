@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+
+{% block title %}凱爾特十字占卜{% endblock %}
+{% block subtitle %}凱爾特十字占卜{% endblock %}
+
+{% block content %}
+<section class="divination-section">
+    <div class="divination-header">
+        <h2>凱爾特十字占卜</h2>
+        <p>十張牌的深度占卜，全面解析您的情況</p>
+    </div>
+
+    <!-- 問題輸入 -->
+    <div class="question-section">
+        <h3>請在心中默念您的問題</h3>
+        <div class="question-input">
+            <textarea id="questionInput" placeholder="請輸入您想詢問的問題，凱爾特十字適合複雜且需要深度分析的情況..." rows="3"></textarea>
+        </div>
+        <div class="question-tips">
+            <p>💡 提示：凱爾特十字是最全面的牌陣，適合需要深入了解情況各個面向的複雜問題。</p>
+        </div>
+    </div>
+
+    <!-- 抽牌區域 -->
+    <div class="card-drawing-area">
+        <div class="celtic-cross-layout">
+            <!-- 左側：核心牌組 (位置 1-4) -->
+            <div class="celtic-core">
+                <div class="celtic-position" data-position="1">
+                    <h4>現狀</h4>
+                    <div class="card-slot" id="pos1"><div class="card-back">🃏</div></div>
+                </div>
+                <div class="celtic-position" data-position="2">
+                    <h4>挑戰</h4>
+                    <div class="card-slot" id="pos2"><div class="card-back">🃏</div></div>
+                </div>
+                <div class="celtic-position" data-position="3">
+                    <h4>根源</h4>
+                    <div class="card-slot" id="pos3"><div class="card-back">🃏</div></div>
+                </div>
+                <div class="celtic-position" data-position="4">
+                    <h4>過去</h4>
+                    <div class="card-slot" id="pos4"><div class="card-back">🃏</div></div>
+                </div>
+            </div>
+            <!-- 右側：時間線 (位置 5-10) -->
+            <div class="celtic-timeline">
+                <div class="celtic-position" data-position="5">
+                    <h4>可能</h4>
+                    <div class="card-slot" id="pos5"><div class="card-back">🃏</div></div>
+                </div>
+                <div class="celtic-position" data-position="6">
+                    <h4>未來</h4>
+                    <div class="card-slot" id="pos6"><div class="card-back">🃏</div></div>
+                </div>
+                <div class="celtic-position" data-position="7">
+                    <h4>自我</h4>
+                    <div class="card-slot" id="pos7"><div class="card-back">🃏</div></div>
+                </div>
+                <div class="celtic-position" data-position="8">
+                    <h4>環境</h4>
+                    <div class="card-slot" id="pos8"><div class="card-back">🃏</div></div>
+                </div>
+                <div class="celtic-position" data-position="9">
+                    <h4>希望</h4>
+                    <div class="card-slot" id="pos9"><div class="card-back">🃏</div></div>
+                </div>
+                <div class="celtic-position" data-position="10">
+                    <h4>結果</h4>
+                    <div class="card-slot" id="pos10"><div class="card-back">🃏</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="draw-button-container">
+            <button id="drawButton" class="draw-button" onclick="drawCelticCross()">
+                <span class="button-text">抽取凱爾特十字</span>
+                <span class="button-icon">✨</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 結果區域 -->
+    <div class="result-section" id="resultSection" style="display: none;">
+        <div class="result-header">
+            <h3>您的凱爾特十字指引</h3>
+            <div class="result-actions">
+                <button class="action-button" onclick="drawCelticCross()">重新占卜</button>
+                <button class="action-button" onclick="shareResult()">分享結果</button>
+            </div>
+        </div>
+
+        <div class="celtic-cross-result" id="celticCrossResult">
+            <!-- 動態內容將在這裡顯示 -->
+        </div>
+    </div>
+
+    <!-- 載入動畫 -->
+    <div class="loading-section" id="loadingSection" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p>凱爾特十字正在為您揭示命運的全貌...</p>
+    </div>
+</section>
+
+<!-- 凱爾特十字說明 -->
+<section class="celtic-explanation">
+    <h3>凱爾特十字牌陣說明</h3>
+    <div class="explanation-content">
+        <div class="position-list">
+            <div class="position-item"><span class="pos-num">1</span> <strong>現狀</strong>：目前的情況和核心問題</div>
+            <div class="position-item"><span class="pos-num">2</span> <strong>挑戰</strong>：面臨的障礙和對立面</div>
+            <div class="position-item"><span class="pos-num">3</span> <strong>根源</strong>：事件的根源和深層原因</div>
+            <div class="position-item"><span class="pos-num">4</span> <strong>過去</strong>：近期的過去和已發生的事</div>
+            <div class="position-item"><span class="pos-num">5</span> <strong>可能</strong>：可能的結果和發展方向</div>
+            <div class="position-item"><span class="pos-num">6</span> <strong>未來</strong>：近期的未來發展</div>
+            <div class="position-item"><span class="pos-num">7</span> <strong>自我</strong>：對此事的態度和看法</div>
+            <div class="position-item"><span class="pos-num">8</span> <strong>環境</strong>：外在環境和他人影響</div>
+            <div class="position-item"><span class="pos-num">9</span> <strong>希望</strong>：內心的期望或恐懼</div>
+            <div class="position-item"><span class="pos-num">10</span> <strong>結果</strong>：最終的結果和結論</div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // 初始化占卜模組
+    Divination.init('{{ csrf_token() }}');
+
+    async function drawCelticCross() {
+        const question = document.getElementById('questionInput').value.trim();
+
+        Divination.showLoading(true);
+
+        try {
+            const data = await Divination.drawCards('celtic-cross', question);
+
+            displayCelticCrossResult(data);
+            Divination.showResult(true);
+
+            // 儲存占卜記錄
+            Divination.saveReading({
+                type: 'celtic-cross',
+                question: question,
+                cards: data.cards
+            });
+        } catch (error) {
+            Divination.handleError(error, '抽牌失敗，請稍後再試');
+        }
+    }
+
+    function displayCelticCrossResult(data) {
+        const celticCrossResult = document.getElementById('celticCrossResult');
+        const cards = data.cards;
+
+        celticCrossResult.innerHTML = `
+            <div class="celtic-result-grid">
+                ${cards.map(cardData => `
+                    <div class="celtic-result-item">
+                        <div class="celtic-item-header">
+                            <span class="celtic-pos-badge">${cardData.position}</span>
+                            <span class="card-position ${cardData.is_reversed ? 'reversed' : 'upright'}">${cardData.is_reversed ? '逆位' : '正位'}</span>
+                        </div>
+                        <div class="card-image ${cardData.is_reversed ? 'reversed' : ''}">
+                            <div class="card-face">
+                                <div class="card-name">${cardData.card.name}</div>
+                                <div class="card-name-en">${cardData.card.name_en}</div>
+                            </div>
+                        </div>
+                        <div class="card-meaning">
+                            <p>${cardData.is_reversed ? cardData.card.reversed_meaning : cardData.card.upright_meaning}</p>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+
+            ${data.question ? `
+            <div class="question-context">
+                <h4>您的問題</h4>
+                <p>"${Divination.escapeHtml(data.question)}"</p>
+            </div>
+            ` : ''}
+        `;
+    }
+</script>
+{% endblock %}

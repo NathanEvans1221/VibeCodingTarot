@@ -31,7 +31,12 @@ const Divination = {
 
     // 抽牌 API 呼叫
     async drawCards(type, question) {
-        const endpoint = type === 'single' ? '/api/draw-single' : '/api/draw-three';
+        const endpoints = {
+            'single': '/api/draw-single',
+            'three': '/api/draw-three',
+            'celtic-cross': '/api/draw-celtic-cross'
+        };
+        const endpoint = endpoints[type] || '/api/draw-single';
         
         const response = await fetch(endpoint, {
             method: 'POST',

@@ -112,6 +112,10 @@ function goToThreeCards() {
     window.location.href = CONSTANTS.PATHS.THREE_CARDS;
 }
 
+function goToCelticCross() {
+    window.location.href = '/celtic-cross';
+}
+
 // 抽牌動畫效果
 function animateCardDraw(cardElement, callback) {
     if (!cardElement) return;
