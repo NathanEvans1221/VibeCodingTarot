@@ -5,6 +5,12 @@
 格式基於 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號遵循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.0.1] - 2026-08-02
+
+### 修復
+- 註冊 Jinja2 `csrf_token` 全域函數，修復 `single_card` 等頁面 render_template 時拋出 `jinja2.exceptions.UndefinedError: 'csrf_token' is undefined` 錯誤
+- 新增 `tests/test_app.py` 單元與迴歸測試，確保所有頁面與 CSRF API 端點運作正常
+
 ## [1.0.0] - 2026-08-02
 
 ### 新增
