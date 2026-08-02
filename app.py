@@ -65,15 +65,6 @@ def generate_csrf_token():
     return session['_csrf_token']
 
 
-# 註冊 Jinja2 全域函數，模板中可使用 {{ csrf_token() }}
-app.jinja_env.globals['csrf_token'] = generate_csrf_token
-
-
-def validate_csrf_token():
-    """驗證 CSRF token，失败時回傳 False"""
-    token = request.headers.get('X-CSRF-Token') or (request.get_json() or {}).get('_csrf_token')
-    return token and token == session.get('_csrf_token')
-
 # 讀取版本號
 def get_version():
     """讀取版本號"""
@@ -84,6 +75,17 @@ def get_version():
         return '0.0.0'
 
 APP_VERSION = get_version()
+
+# 註冊 Jinja2 全域函數，模板中可使用 {{ csrf_token() }}
+# 需要在 app 建立後、路由註冊前設定
+app.jinja_env.globals['csrf_token'] = generate_csrf_token
+app.jinja_env.globals['version'] = APP_VERSION
+
+
+def validate_csrf_token():
+    """驗證 CSRF token，失败時回傳 False"""
+    token = request.headers.get('X-CSRF-Token') or (request.get_json() or {}).get('_csrf_token')
+    return token and token == session.get('_csrf_token')
 
 # 載入塔羅牌數據
 def load_tarot_cards():
