@@ -53,3 +53,57 @@
     font-size: 14px;
     color: var(--color-gold-dim, #8a7a5a);
 }
+
+/* === 翻牌動畫 === */
+
+.card-flip-container {
+    width: 200px;
+    height: 340px;
+    perspective: 1200px;
+}
+
+.card-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1.0);
+}
+
+.card-flip-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.card-face-back {
+    transform: rotateY(0deg);
+    background: var(--color-cosmos, #1a1a2e);
+}
+
+.card-face-back img,
+.card-face-back svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.card-face-front {
+    transform: rotateY(180deg);
+}
+
+/* 翻牌過程中隱藏 loading pulse,避免看見 0.6 透明度的中間狀態 */
+.card-flip-inner.flipping .card-face-front .tarot-card-image.loading {
+    animation: none;
+    opacity: 1;
+}

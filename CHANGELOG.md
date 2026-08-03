@@ -21,6 +21,10 @@
 - 安裝 graphify `post-checkout` 同步 hook
 - 註冊 `graph.json` 專用 merge driver 至 `.gitattributes`
 - 新增 `requirements-dev.txt`，宣告 sprite rebuild 工具鏈依賴 `Pillow==10.4.0`
+- 新增 `static/img/tarot-card-back.svg` 自繪神秘幾何玫瑰窗 SVG 牌背（同心圓 + 八角星 + 四方位 ☉☽♀♂ + 星塵），免外部素材依賴
+- 新增 `Divination.renderCardWithFlip(card, isReversed, container)` 翻牌動畫方法（先顯示牌背 → `requestAnimationFrame` 後 `flip-container` 加入 `.flipped` class 觸發 0.7s rotateY 翻轉 → 顯示 sprite 卡面）
+- `static/css/card-sprite.css` 加入 `.card-flip-container` / `.card-flip-inner` / `.card-face` 翻牌 3D CSS（`perspective: 1200px`、`transform-style: preserve-3d`、`backface-visibility: hidden`、`cubic-bezier(0.4, 0.0, 0.2, 1.0)` ease 曲線）
+- `tests/test_card_flip.py` 新增 11 個翻牌相關測試（SVG 存在 + 為合法 XML + 玫瑰窗元素、CSS .card-flip-container/inner/flipped/face/backface-visibility/180deg、JS renderCardWithFlip 方法存在 + 內含完整 DOM 結構 + 呼叫 renderCard + 使用 requestAnimationFrame、3 模板改呼叫 flip 版且無裸 renderCard）
 
 ### 變更
 - `templates/base.html` 載入 `card-sprite.css`，全站生效

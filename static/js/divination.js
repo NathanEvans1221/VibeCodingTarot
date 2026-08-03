@@ -67,6 +67,36 @@ const Divination = {
         bgImg.src = '/static/img/tarot_sprite.jpg';
     },
 
+    // 抽牌動畫版:先顯示牌背,延遲 60ms 觸發翻牌,翻完顯示牌面 sprite
+    renderCardWithFlip(card, isReversed, container) {
+        if (!card || !container) {
+            console.warn('[Divination.renderCardWithFlip] 缺少 card 或 container');
+            return;
+        }
+
+        container.innerHTML = `
+            <div class="card-flip-container">
+                <div class="card-flip-inner">
+                    <div class="card-face card-face-back">
+                        <img src="/static/img/tarot-card-back.svg" alt="塔羅牌背面" draggable="false">
+                    </div>
+                    <div class="card-face card-face-front"></div>
+                </div>
+            </div>
+        `;
+
+        const inner = container.querySelector('.card-flip-inner');
+        const frontFace = container.querySelector('.card-face-front');
+
+        this.renderCard(card, isReversed, frontFace);
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                inner.classList.add('flipped');
+            });
+        });
+    },
+
     // 初始化
     init(csrfToken) {
 

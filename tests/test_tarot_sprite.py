@@ -344,19 +344,19 @@ class TestDivinationPagePreload(unittest.TestCase):
         content = self._read('single_card.html')
         self._assert_preload(content)
         self.assertIn('id="cardContainer"', content)
-        self.assertIn("Divination.renderCard(", content)
+        self.assertIn("Divination.renderCardWithFlip(", content)
 
     def test_three_cards_has_preload(self):
         content = self._read('three_cards.html')
         self._assert_preload(content)
         self.assertIn('id="card${index + 1}Container"', content)
-        self.assertIn("Divination.renderCard(", content)
+        self.assertIn("Divination.renderCardWithFlip(", content)
 
     def test_celtic_cross_has_preload(self):
         content = self._read('celtic_cross.html')
         self._assert_preload(content)
         self.assertIn('id="celticCard${index + 1}Container"', content)
-        self.assertIn("Divination.renderCard(", content)
+        self.assertIn("Divination.renderCardWithFlip(", content)
 
     def test_no_inline_card_face_rendering(self):
         """舊的 inline .card-face 渲染必須移除,否則 sprite CSS 不會生效。"""

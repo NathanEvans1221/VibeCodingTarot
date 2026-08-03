@@ -185,9 +185,9 @@
             ` : ''}
         `;
 
-        // 以 sprite sheet 渲染每張卡面
+        // 以翻牌動畫渲染每張卡面
         cards.forEach((cardData, index) => {
-            Divination.renderCard(
+            Divination.renderCardWithFlip(
                 cardData.card,
                 cardData.is_reversed,
                 document.getElementById(`celticCard${index + 1}Container`)
