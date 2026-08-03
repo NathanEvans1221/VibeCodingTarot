@@ -1,3 +1,5 @@
+import json
+from pathlib import Path
 import sys
 import os
 import unittest
@@ -33,7 +35,7 @@ class TestTarotApp(unittest.TestCase):
         self.assertIn('Divination.init('.encode('utf-8'), response.data)
 
     def test_celtic_cross_page(self):
-        """測試凱爾特十字頁面渲染"""
+        """測試凱爾特十字牌面渲染"""
         response = self.app.get('/celtic-cross')
         self.assertEqual(response.status_code, 200)
         self.assertIn('Divination.init('.encode('utf-8'), response.data)
@@ -42,6 +44,30 @@ class TestTarotApp(unittest.TestCase):
         """測試歷史記錄頁面渲染"""
         response = self.app.get('/history')
         self.assertEqual(response.status_code, 200)
+
+    def test_tarot_cards_have_sprite_coordinates(self):
+        """每張牌都應包含 13 欄 6 列 sprite 座標。"""
+        cards_path = Path(__file__).parents[1] / 'data' / 'tarot_cards.json'
+        with cards_path.open(encoding='utf-8') as cards_file:
+            cards = json.load(cards_file)
+
+        self.assertEqual(len(cards), 78)
+        for index, card in enumerate(cards):
+            self.assertEqual(card['sprite_x'], index % 13)
+            self.assertEqual(card['sprite_y'], index // 13)
+
+    def test_tarot_cards_follow_sprite_order(self):
+        """牌面順序應為 Major 後接四組 Minor。"""
+        cards_path = Path(__file__).parents[1] / 'data' / 'tarot_cards.json'
+        with cards_path.open(encoding='utf-8') as cards_file:
+            cards = json.load(cards_file)
+
+        self.assertEqual([card['number'] for card in cards[:22]], list(range(22)))
+        expected_suits = ['權杖', '聖杯', '寶劍', '錢幣']
+        self.assertEqual(
+            [card['suit'] for card in cards[22:]],
+            [suit for suit in expected_suits for _ in range(14)],
+        )
 
     def test_api_draw_single_without_csrf(self):
         """測試無 CSRF Token 的請求應被拒絕 (403)"""
