@@ -10,9 +10,9 @@
     "semantic_hash": "8e0cb3330e66acba619fd367e7568d8b"
   },
   "data/tarot_cards.json": {
-    "mtime": 1785644759.61408,
-    "ast_hash": "46a15c71ee86a0dbb882fb6db5841578",
-    "semantic_hash": "46a15c71ee86a0dbb882fb6db5841578"
+    "mtime": 1785775844.3094757,
+    "ast_hash": "7cccc09235fc4f055c992aff1ebd6338",
+    "semantic_hash": ""
   },
   "setup_git_sync.ps1": {
     "mtime": 1768936536.2067187,
@@ -20,9 +20,9 @@
     "semantic_hash": "c345d68e1baaf8bca7d65b95838bf07f"
   },
   "static/js/divination.js": {
-    "mtime": 1785662287.7421947,
-    "ast_hash": "0cb6937956de61639f62f81e7ad98b71",
-    "semantic_hash": "0cb6937956de61639f62f81e7ad98b71"
+    "mtime": 1785775844.3225858,
+    "ast_hash": "1f9a88bad683094c30afb8c4f565d408",
+    "semantic_hash": ""
   },
   "static/js/main.js": {
     "mtime": 1785645284.218303,
@@ -30,9 +30,9 @@
     "semantic_hash": "ae1d9a1f3841d21b3f7678ddebc91073"
   },
   "tests/test_app.py": {
-    "mtime": 1785649483.1734028,
-    "ast_hash": "4ff12c2ed3817db38425053fb36c6ee8",
-    "semantic_hash": "4ff12c2ed3817db38425053fb36c6ee8"
+    "mtime": 1785687390.4755576,
+    "ast_hash": "8baaddcf3f466f27a5324ec70f66adcd",
+    "semantic_hash": ""
   },
   ".agent_task_state.md": {
     "mtime": 1785649483.160114,
@@ -55,8 +55,8 @@
     "semantic_hash": "089bfdc595878857e4554d0a384d567e"
   },
   "CHANGELOG.md": {
-    "mtime": 1785665262.2263758,
-    "ast_hash": "be5b1452f9d259550d8e21b675c5c2f2",
+    "mtime": 1785775844.3014774,
+    "ast_hash": "351011251d90b20b417e6e361127bc4d",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -105,14 +105,14 @@
     "semantic_hash": "9f5bf8e1286e70f492a62955bb578d46"
   },
   "templates/base.html": {
-    "mtime": 1785649894.8064592,
-    "ast_hash": "29c01facbe9f452a01b58e770c180533",
-    "semantic_hash": "29c01facbe9f452a01b58e770c180533"
+    "mtime": 1785775844.3235881,
+    "ast_hash": "4f2560297e0e4dcea2ef7326decd6b44",
+    "semantic_hash": ""
   },
   "templates/celtic_cross.html": {
-    "mtime": 1785645284.219453,
-    "ast_hash": "a6e00c32eedbd5ea8799b0ef84b7d439",
-    "semantic_hash": "a6e00c32eedbd5ea8799b0ef84b7d439"
+    "mtime": 1785775844.3245852,
+    "ast_hash": "3eb00c344900ee7648119b21f2bebe56",
+    "semantic_hash": ""
   },
   "templates/history.html": {
     "mtime": 1785644497.4717755,
@@ -125,14 +125,14 @@
     "semantic_hash": "6f6dd834e83d9efdd0ef9b344ac067ab"
   },
   "templates/single_card.html": {
-    "mtime": 1785644194.1180475,
-    "ast_hash": "101e0939c5f5ce825f2d85337242504b",
-    "semantic_hash": "101e0939c5f5ce825f2d85337242504b"
+    "mtime": 1785775844.3245852,
+    "ast_hash": "f2a1221593fd9e579090963cc05c354f",
+    "semantic_hash": ""
   },
   "templates/three_cards.html": {
-    "mtime": 1785644194.119047,
-    "ast_hash": "0413d3e375b23cefc2714d7b51f9a9ec",
-    "semantic_hash": "0413d3e375b23cefc2714d7b51f9a9ec"
+    "mtime": 1785775844.3255851,
+    "ast_hash": "b0fbf9b8167d88f8031a397b5ac07efe",
+    "semantic_hash": ""
   },
   "images/Tarot01.jpg": {
     "mtime": 1785661293.357576,
@@ -147,6 +147,41 @@
   "docs/superpowers/plans/2026-08-02-tarot-card-sprite-redesign.md": {
     "mtime": 1785682202.8587136,
     "ast_hash": "69c6e069b96ec7aa28249b910fb5235e",
+    "semantic_hash": ""
+  },
+  "tests/__init__.py": {
+    "mtime": 1785775844.3255851,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "tests/test_tarot_sprite.py": {
+    "mtime": 1785775844.3265853,
+    "ast_hash": "319556591171f90c08c29e8cc69c9b0d",
+    "semantic_hash": ""
+  },
+  "tools/build_sprite.py": {
+    "mtime": 1785775844.3275845,
+    "ast_hash": "898adb0bcd4ccddaceb70f048ec1369b",
+    "semantic_hash": ""
+  },
+  "tools/download_sources.py": {
+    "mtime": 1785775844.3275845,
+    "ast_hash": "a1e74f4cadbbb113bf30735f40b5b343",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/plans/2026-08-02-tarot-card-sprite-visual-qa-checklist.md": {
+    "mtime": 1785775844.310476,
+    "ast_hash": "36a1d31942e30a266b50d5a2b097a334",
+    "semantic_hash": ""
+  },
+  "requirements-dev.txt": {
+    "mtime": 1785775844.310476,
+    "ast_hash": "fb24496bfb7edaa4f30406ddf46dc359",
+    "semantic_hash": ""
+  },
+  "static/img/tarot_sprite.jpg": {
+    "mtime": 1785775844.3215916,
+    "ast_hash": "d12cfda75046671b39ddfd3caa2aeffb",
     "semantic_hash": ""
   }
 }

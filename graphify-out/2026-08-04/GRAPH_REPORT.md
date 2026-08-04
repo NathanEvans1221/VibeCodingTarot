@@ -1,16 +1,16 @@
-# Graph Report - VibeCodingTarot  (2026-08-02)
+# Graph Report - VibeCodingTarot  (2026-08-04)
 
 ## Corpus Check
-- 22 files · ~14,994 words
+- 27 files · ~93,380 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 148 nodes · 187 edges · 13 communities (9 shown, 4 thin omitted)
+- 152 nodes · 191 edges · 14 communities (10 shown, 4 thin omitted)
 - Extraction: 87% EXTRACTED · 13% INFERRED · 0% AMBIGUOUS · INFERRED: 25 edges (avg confidence: 0.82)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `949a41f0`
+- Built from commit: `69ef1c40`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -27,11 +27,12 @@
 - Venv Setup Notes
 - Tarot Card Sprite Redesign — 設計規格
 - Tarot Card Sprite Redesign Implementation Plan
+- 設計決策
 
 ## God Nodes (most connected - your core abstractions)
 1. `Tarot Card Sprite Redesign Implementation Plan` - 15 edges
-2. `Tarot Card Sprite Redesign — 設計規格` - 11 edges
-3. `TestTarotApp` - 9 edges
+2. `TestTarotApp` - 11 edges
+3. `Tarot Card Sprite Redesign — 設計規格` - 11 edges
 4. `Base Template` - 8 edges
 5. `VibeCodingTarot Homepage Screenshot` - 8 edges
 6. `Architecture Decision Records` - 7 edges
@@ -62,7 +63,7 @@
 - **Homepage Visual Layout Sections** — images_tarot01_navigation_menu, images_tarot01_hero_section, images_tarot01_divination_method_selector, images_tarot01_major_arcana_gallery, images_tarot01_feature_highlights, images_tarot01_version_footer [EXTRACTED 1.00]
 - **Three Divination Spread Options** — images_tarot01_single_card_spread, images_tarot01_three_card_spread, images_tarot01_celtic_cross_spread [EXTRACTED 1.00]
 
-## Communities (13 total, 4 thin omitted)
+## Communities (14 total, 4 thin omitted)
 
 ### Community 0 - "CLAUDE.md"
 Cohesion: 0.19
@@ -81,20 +82,24 @@ Cohesion: 0.21
 Nodes (14): Changelog, API Endpoint /api/draw-celtic-cross, Celtic Cross Spread (10 cards), CSRF Protection, Divination JS Module, LocalStorage Persistence (100 entries), Major Arcana (22 cards), Minor Arcana (56 cards) (+6 more)
 
 ### Community 4 - "TestTarotApp"
-Cohesion: 0.15
-Nodes (4): 測試單張牌頁面渲染（包含 csrf_token）, 測試無 CSRF Token 的請求應被拒絕 (403), 測試合法 CSRF Token 的抽牌 API, TestTarotApp
+Cohesion: 0.12
+Nodes (6): 測試單張牌頁面渲染（包含 csrf_token）, 每張牌都應包含 13 欄 6 列 sprite 座標。, 牌面順序應為 Major 後接四組 Minor。, 測試無 CSRF Token 的請求應被拒絕 (403), 測試合法 CSRF Token 的抽牌 API, TestTarotApp
 
 ### Community 6 - "Architecture Decision Records"
 Cohesion: 0.32
 Nodes (8): Architecture Document, Flask Framework Decision, Frontend Rendering Decision, JSON File Storage Decision, No Account System Decision, Single-Page Template Pattern, Architecture Decision Records, Python Requirements
 
 ### Community 11 - "Tarot Card Sprite Redesign — 設計規格"
-Cohesion: 0.08
-Nodes (24): D1 — 素材：公共領域 JPG sprite sheet, D2 — 載入策略：Lazy load + 預載提示, D3 — 渲染方式：CSS 變數驅動 background-position, D4 — 逆位：data 屬性 + CSS transform, D5 — 向後相容, DoD, Manual QA Checklist, Out of Scope (+16 more)
+Cohesion: 0.11
+Nodes (18): DoD, Manual QA Checklist, Out of Scope, Tarot Card Sprite Redesign — 設計規格, 保持不變, 修改檔案, 元件, 單元測試（擴充 `tests/test_app.py`） (+10 more)
 
 ### Community 12 - "Tarot Card Sprite Redesign Implementation Plan"
 Cohesion: 0.12
 Nodes (15): File Structure, Self-Review Checklist, Tarot Card Sprite Redesign Implementation Plan, Task 10: 全部測試回歸, Task 11: 手動視覺驗證 78 張牌, Task 12: 建立 Pull Request, Task 1: 為 tarot_cards.json 加入 sprite 座標, Task 2: 建立 sprite sheet 組裝腳本 (+7 more)
+
+### Community 13 - "設計決策"
+Cohesion: 0.33
+Nodes (6): D1 — 素材：公共領域 JPG sprite sheet, D2 — 載入策略：Lazy load + 預載提示, D3 — 渲染方式：CSS 變數驅動 background-position, D4 — 逆位：data 屬性 + CSS transform, D5 — 向後相容, 設計決策
 
 ## Knowledge Gaps
 - **49 isolated node(s):** `File Structure`, `Task 1: 為 tarot_cards.json 加入 sprite 座標`, `Task 2: 建立 sprite sheet 組裝腳本`, `Task 3: 建立 card-sprite.css`, `Task 4: 在 divination.js 新增 renderCard 方法` (+44 more)
@@ -105,10 +110,14 @@ Nodes (15): File Structure, Self-Review Checklist, Tarot Card Sprite Redesign Im
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Architecture Decision Records` connect `Architecture Decision Records` to `CLAUDE.md`, `Base Template`?**
-  _High betweenness centrality (0.025) - this node is a cross-community bridge._
+  _High betweenness centrality (0.024) - this node is a cross-community bridge._
+- **Why does `Tarot Card Sprite Redesign — 設計規格` connect `Tarot Card Sprite Redesign — 設計規格` to `設計決策`?**
+  _High betweenness centrality (0.022) - this node is a cross-community bridge._
 - **What connects `File Structure`, `Task 1: 為 tarot_cards.json 加入 sprite 座標`, `Task 2: 建立 sprite sheet 組裝腳本` to the rest of the system?**
   _49 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `TestTarotApp` be split into smaller, more focused modules?**
+  _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
 - **Should `Tarot Card Sprite Redesign — 設計規格` be split into smaller, more focused modules?**
-  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Tarot Card Sprite Redesign Implementation Plan` be split into smaller, more focused modules?**
   _Cohesion score 0.125 - nodes in this community are weakly interconnected._

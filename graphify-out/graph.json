@@ -84,15 +84,1049 @@
   },
   "nodes": [
     {
+      "label": "divination.js",
+      "file_type": "code",
+      "source_file": "static/js/divination.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "static_js_divination",
+      "community": 7,
+      "community_name": "divination.js",
+      "norm_label": "divination.js"
+    },
+    {
+      "label": "Divination",
+      "file_type": "code",
+      "source_file": "static/js/divination.js",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "static_js_divination_divination",
+      "community": 7,
+      "community_name": "divination.js",
+      "norm_label": "divination"
+    },
+    {
+      "label": "divinationStyle",
+      "file_type": "code",
+      "source_file": "static/js/divination.js",
+      "source_location": "L330",
+      "_origin": "ast",
+      "id": "static_js_divination_divinationstyle",
+      "community": 7,
+      "community_name": "divination.js",
+      "norm_label": "divinationstyle"
+    },
+    {
+      "label": "test_card_flip.py",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_test_card_flip",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": "test_card_flip.py"
+    },
+    {
+      "label": "TestCardBackSvg",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testcardbacksvg",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": "testcardbacksvg"
+    },
+    {
+      "label": ".test_svg_exists()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testcardbacksvg_test_svg_exists",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": ".test_svg_exists()"
+    },
+    {
+      "label": ".test_svg_is_well_formed_xml()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testcardbacksvg_test_svg_is_well_formed_xml",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": ".test_svg_is_well_formed_xml()"
+    },
+    {
+      "label": ".test_svg_has_rose_window()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testcardbacksvg_test_svg_has_rose_window",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": ".test_svg_has_rose_window()"
+    },
+    {
+      "label": "TestCardFlipCss",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testcardflipcss",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": "testcardflipcss"
+    },
+    {
+      "label": ".setUpClass()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testcardflipcss_setupclass",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": ".setupclass()"
+    },
+    {
+      "label": ".test_has_flip_container_rule()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testcardflipcss_test_has_flip_container_rule",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": ".test_has_flip_container_rule()"
+    },
+    {
+      "label": ".test_has_flip_inner_with_3d_transform()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testcardflipcss_test_has_flip_inner_with_3d_transform",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": ".test_has_flip_inner_with_3d_transform()"
+    },
+    {
+      "label": ".test_has_flipped_state()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testcardflipcss_test_has_flipped_state",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": ".test_has_flipped_state()"
+    },
+    {
+      "label": ".test_has_card_face_with_backface_visibility()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testcardflipcss_test_has_card_face_with_backface_visibility",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": ".test_has_card_face_with_backface_visibility()"
+    },
+    {
+      "label": ".test_front_face_rotated_180()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testcardflipcss_test_front_face_rotated_180",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": ".test_front_face_rotated_180()"
+    },
+    {
+      "label": "TestRenderCardWithFlip",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testrendercardwithflip",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": "testrendercardwithflip"
+    },
+    {
+      "label": ".setUpClass()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L66",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testrendercardwithflip_setupclass",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": ".setupclass()"
+    },
+    {
+      "label": ".test_method_exists()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testrendercardwithflip_test_method_exists",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": ".test_method_exists()"
+    },
+    {
+      "label": ".test_builds_flip_dom()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L73",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testrendercardwithflip_test_builds_flip_dom",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": ".test_builds_flip_dom()"
+    },
+    {
+      "label": ".test_delegates_to_render_card()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L83",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testrendercardwithflip_test_delegates_to_render_card",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": ".test_delegates_to_render_card()"
+    },
+    {
+      "label": ".test_uses_requestAnimationFrame_to_defer_flip()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testrendercardwithflip_test_uses_requestanimationframe_to_defer_flip",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": ".test_uses_requestanimationframe_to_defer_flip()"
+    },
+    {
+      "label": "TestTemplatesUseFlip",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L94",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testtemplatesuseflip",
+      "community": 15,
+      "community_name": "TestTemplatesUseFlip",
+      "norm_label": "testtemplatesuseflip"
+    },
+    {
+      "label": "._load()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L97",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testtemplatesuseflip_load",
+      "community": 15,
+      "community_name": "TestTemplatesUseFlip",
+      "norm_label": "._load()"
+    },
+    {
+      "label": ".test_single_card_uses_flip()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L100",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testtemplatesuseflip_test_single_card_uses_flip",
+      "community": 15,
+      "community_name": "TestTemplatesUseFlip",
+      "norm_label": ".test_single_card_uses_flip()"
+    },
+    {
+      "label": ".test_three_cards_uses_flip()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L106",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testtemplatesuseflip_test_three_cards_uses_flip",
+      "community": 15,
+      "community_name": "TestTemplatesUseFlip",
+      "norm_label": ".test_three_cards_uses_flip()"
+    },
+    {
+      "label": ".test_celtic_cross_uses_flip()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L110",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testtemplatesuseflip_test_celtic_cross_uses_flip",
+      "community": 15,
+      "community_name": "TestTemplatesUseFlip",
+      "norm_label": ".test_celtic_cross_uses_flip()"
+    },
+    {
+      "label": ".test_no_template_still_calls_renderCard_directly()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L114",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testtemplatesuseflip_test_no_template_still_calls_rendercard_directly",
+      "community": 15,
+      "community_name": "TestTemplatesUseFlip",
+      "norm_label": ".test_no_template_still_calls_rendercard_directly()"
+    },
+    {
+      "label": ".test_cards_respect_backface_visibility_safe_html()",
+      "file_type": "code",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L125",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_testtemplatesuseflip_test_cards_respect_backface_visibility_safe_html",
+      "community": 15,
+      "community_name": "TestTemplatesUseFlip",
+      "norm_label": ".test_cards_respect_backface_visibility_safe_html()"
+    },
+    {
+      "label": "\u5854\u7f85\u724c\u7ffb\u724c\u52d5\u756b + \u81ea\u8a02 SVG \u724c\u80cc\u6e2c\u8a66\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_rationale_1",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": "\u5854\u7f85\u724c\u7ffb\u724c\u52d5\u756b + \u81ea\u8a02 svg \u724c\u80cc\u6e2c\u8a66\u3002"
+    },
+    {
+      "label": "tarot-card-back.svg \u5fc5\u9808\u5b58\u5728\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_rationale_13",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": "tarot-card-back.svg \u5fc5\u9808\u5b58\u5728\u3002"
+    },
+    {
+      "label": "\u6b63\u9762 .card-face-front \u5fc5\u9808\u65cb\u8f49 180deg \u4ee5\u914d\u5408\u80cc\u9762\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_rationale_58",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": "\u6b63\u9762 .card-face-front \u5fc5\u9808\u65cb\u8f49 180deg \u4ee5\u914d\u5408\u80cc\u9762\u3002"
+    },
+    {
+      "label": "Divination.renderCardWithFlip \u5fc5\u9808\u5b58\u5728\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_rationale_70",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": "divination.rendercardwithflip \u5fc5\u9808\u5b58\u5728\u3002"
+    },
+    {
+      "label": "\u65b9\u6cd5\u61c9\u63d2\u5165 .card-flip-container + .card-flip-inner + \u5169\u500b .card-face\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L74",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_rationale_74",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": "\u65b9\u6cd5\u61c9\u63d2\u5165 .card-flip-container + .card-flip-inner + \u5169\u500b .card-face\u3002"
+    },
+    {
+      "label": "\u61c9\u5728 front face \u547c\u53eb renderCard \u4f86\u653e sprite\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L84",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_rationale_84",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": "\u61c9\u5728 front face \u547c\u53eb rendercard \u4f86\u653e sprite\u3002"
+    },
+    {
+      "label": "\u61c9\u7528 requestAnimationFrame \u7b49\u4e00\u5e40\u624d\u89f8\u767c\u7ffb\u724c\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L90",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_rationale_90",
+      "community": 13,
+      "community_name": "TestCardFlipCss",
+      "norm_label": "\u61c9\u7528 requestanimationframe \u7b49\u4e00\u5e40\u624d\u89f8\u767c\u7ffb\u724c\u3002"
+    },
+    {
+      "label": "3 \u500b\u5360\u535c\u6a21\u677f\u90fd\u61c9\u547c\u53eb renderCardWithFlip \u800c\u975e renderCard\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L95",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_rationale_95",
+      "community": 15,
+      "community_name": "TestTemplatesUseFlip",
+      "norm_label": "3 \u500b\u5360\u535c\u6a21\u677f\u90fd\u61c9\u547c\u53eb rendercardwithflip \u800c\u975e rendercard\u3002"
+    },
+    {
+      "label": "\u4e0d\u518d\u6709\u300c\u88f8\u7684 renderCard(...)\u300d\u547c\u53eb,\u78ba\u4fdd\u7ffb\u724c\u52d5\u756b\u5168\u7ad9\u751f\u6548\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L115",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_rationale_115",
+      "community": 15,
+      "community_name": "TestTemplatesUseFlip",
+      "norm_label": "\u4e0d\u518d\u6709\u300c\u88f8\u7684 rendercard(...)\u300d\u547c\u53eb,\u78ba\u4fdd\u7ffb\u724c\u52d5\u756b\u5168\u7ad9\u751f\u6548\u3002"
+    },
+    {
+      "label": "escapeHtml \u5df2\u7528\u65bc card name(keyword/position),\u7ffb\u724c\u52d5\u756b\u4e0d\u5f15\u5165 XSS\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L126",
+      "_origin": "ast",
+      "id": "tests_test_card_flip_rationale_126",
+      "community": 15,
+      "community_name": "TestTemplatesUseFlip",
+      "norm_label": "escapehtml \u5df2\u7528\u65bc card name(keyword/position),\u7ffb\u724c\u52d5\u756b\u4e0d\u5f15\u5165 xss\u3002"
+    },
+    {
+      "label": "test_tarot_sprite.py",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": "test_tarot_sprite.py"
+    },
+    {
+      "label": "TestSpriteCoordinates",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testspritecoordinates",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": "testspritecoordinates"
+    },
+    {
+      "label": ".setUpClass()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testspritecoordinates_setupclass",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".setupclass()"
+    },
+    {
+      "label": ".test_all_78_cards_exist()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testspritecoordinates_test_all_78_cards_exist",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_all_78_cards_exist()"
+    },
+    {
+      "label": ".test_every_card_has_sprite_coords()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testspritecoordinates_test_every_card_has_sprite_coords",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_every_card_has_sprite_coords()"
+    },
+    {
+      "label": ".test_sprite_coords_in_range()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testspritecoordinates_test_sprite_coords_in_range",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_sprite_coords_in_range()"
+    },
+    {
+      "label": ".test_sprite_coords_unique()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testspritecoordinates_test_sprite_coords_unique",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_sprite_coords_unique()"
+    },
+    {
+      "label": "TestSpriteSheetAsset",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testspritesheetasset",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": "testspritesheetasset"
+    },
+    {
+      "label": ".test_sprite_jpg_exists()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L52",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testspritesheetasset_test_sprite_jpg_exists",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_sprite_jpg_exists()"
+    },
+    {
+      "label": ".test_sprite_jpg_dimensions()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testspritesheetasset_test_sprite_jpg_dimensions",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_sprite_jpg_dimensions()"
+    },
+    {
+      "label": "TestBuildSpriteFailFast",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testbuildspritefailfast",
+      "community": 18,
+      "community_name": "TestBuildSpriteFailFast",
+      "norm_label": "testbuildspritefailfast"
+    },
+    {
+      "label": ".setUp()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L72",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testbuildspritefailfast_setup",
+      "community": 18,
+      "community_name": "TestBuildSpriteFailFast",
+      "norm_label": ".setup()"
+    },
+    {
+      "label": "._import_build_sprite()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L102",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testbuildspritefailfast_import_build_sprite",
+      "community": 18,
+      "community_name": "TestBuildSpriteFailFast",
+      "norm_label": "._import_build_sprite()"
+    },
+    {
+      "label": ".test_missing_image_exits_with_code_1()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L111",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testbuildspritefailfast_test_missing_image_exits_with_code_1",
+      "community": 18,
+      "community_name": "TestBuildSpriteFailFast",
+      "norm_label": ".test_missing_image_exits_with_code_1()"
+    },
+    {
+      "label": ".test_missing_image_does_not_produce_sprite_and_deletes_stale()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L141",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testbuildspritefailfast_test_missing_image_does_not_produce_sprite_and_deletes_stale",
+      "community": 18,
+      "community_name": "TestBuildSpriteFailFast",
+      "norm_label": ".test_missing_image_does_not_produce_sprite_and_deletes_stale()"
+    },
+    {
+      "label": "TestDownloadSourcesBackoff",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L174",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdownloadsourcesbackoff",
+      "community": 19,
+      "community_name": "TestDownloadSourcesBackoff",
+      "norm_label": "testdownloadsourcesbackoff"
+    },
+    {
+      "label": ".test_retries_on_http_5xx_then_succeeds()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L177",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdownloadsourcesbackoff_test_retries_on_http_5xx_then_succeeds",
+      "community": 19,
+      "community_name": "TestDownloadSourcesBackoff",
+      "norm_label": ".test_retries_on_http_5xx_then_succeeds()"
+    },
+    {
+      "label": ".test_retries_on_urlerror_then_succeeds()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L203",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdownloadsourcesbackoff_test_retries_on_urlerror_then_succeeds",
+      "community": 19,
+      "community_name": "TestDownloadSourcesBackoff",
+      "norm_label": ".test_retries_on_urlerror_then_succeeds()"
+    },
+    {
+      "label": ".test_does_not_retry_on_4xx_non_429()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L227",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdownloadsourcesbackoff_test_does_not_retry_on_4xx_non_429",
+      "community": 19,
+      "community_name": "TestDownloadSourcesBackoff",
+      "norm_label": ".test_does_not_retry_on_4xx_non_429()"
+    },
+    {
+      "label": ".test_user_agent_identifies_tool()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L245",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdownloadsourcesbackoff_test_user_agent_identifies_tool",
+      "community": 19,
+      "community_name": "TestDownloadSourcesBackoff",
+      "norm_label": ".test_user_agent_identifies_tool()"
+    },
+    {
+      "label": "TestCardSpriteCss",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L256",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testcardspritecss",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": "testcardspritecss"
+    },
+    {
+      "label": ".test_css_file_exists()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L261",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testcardspritecss_test_css_file_exists",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_css_file_exists()"
+    },
+    {
+      "label": ".test_css_contains_base_rule()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L265",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testcardspritecss_test_css_contains_base_rule",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_css_contains_base_rule()"
+    },
+    {
+      "label": ".test_css_contains_reversed_rule()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L272",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testcardspritecss_test_css_contains_reversed_rule",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_css_contains_reversed_rule()"
+    },
+    {
+      "label": ".test_css_contains_pulse_animation()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L278",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testcardspritecss_test_css_contains_pulse_animation",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_css_contains_pulse_animation()"
+    },
+    {
+      "label": "TestDivinationJsSprite",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L285",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdivinationjssprite",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": "testdivinationjssprite"
+    },
+    {
+      "label": ".test_renderCard_method_exists()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L290",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdivinationjssprite_test_rendercard_method_exists",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_rendercard_method_exists()"
+    },
+    {
+      "label": ".test_sets_data_card_attribute()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L296",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdivinationjssprite_test_sets_data_card_attribute",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_sets_data_card_attribute()"
+    },
+    {
+      "label": ".test_sets_data_reversed_attribute()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L301",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdivinationjssprite_test_sets_data_reversed_attribute",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_sets_data_reversed_attribute()"
+    },
+    {
+      "label": ".test_clamps_sprite_coords()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L306",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdivinationjssprite_test_clamps_sprite_coords",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_clamps_sprite_coords()"
+    },
+    {
+      "label": ".test_handles_missing_sprite_coords()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L312",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdivinationjssprite_test_handles_missing_sprite_coords",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_handles_missing_sprite_coords()"
+    },
+    {
+      "label": "TestBaseTemplateCss",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L318",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testbasetemplatecss",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": "testbasetemplatecss"
+    },
+    {
+      "label": ".test_base_includes_card_sprite_css()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L323",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testbasetemplatecss_test_base_includes_card_sprite_css",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_base_includes_card_sprite_css()"
+    },
+    {
+      "label": "TestDivinationPagePreload",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L329",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdivinationpagepreload",
+      "community": 16,
+      "community_name": "TestDivinationPagePreload",
+      "norm_label": "testdivinationpagepreload"
+    },
+    {
+      "label": "._read()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L334",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdivinationpagepreload_read",
+      "community": 16,
+      "community_name": "TestDivinationPagePreload",
+      "norm_label": "._read()"
+    },
+    {
+      "label": "._assert_preload()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L338",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdivinationpagepreload_assert_preload",
+      "community": 16,
+      "community_name": "TestDivinationPagePreload",
+      "norm_label": "._assert_preload()"
+    },
+    {
+      "label": ".test_single_card_has_preload()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L343",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdivinationpagepreload_test_single_card_has_preload",
+      "community": 16,
+      "community_name": "TestDivinationPagePreload",
+      "norm_label": ".test_single_card_has_preload()"
+    },
+    {
+      "label": ".test_three_cards_has_preload()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L349",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdivinationpagepreload_test_three_cards_has_preload",
+      "community": 16,
+      "community_name": "TestDivinationPagePreload",
+      "norm_label": ".test_three_cards_has_preload()"
+    },
+    {
+      "label": ".test_celtic_cross_has_preload()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L355",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdivinationpagepreload_test_celtic_cross_has_preload",
+      "community": 16,
+      "community_name": "TestDivinationPagePreload",
+      "norm_label": ".test_celtic_cross_has_preload()"
+    },
+    {
+      "label": ".test_no_inline_card_face_rendering()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L361",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testdivinationpagepreload_test_no_inline_card_face_rendering",
+      "community": 16,
+      "community_name": "TestDivinationPagePreload",
+      "norm_label": ".test_no_inline_card_face_rendering()"
+    },
+    {
+      "label": "TestHistoryPageNoPreload",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L369",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testhistorypagenopreload",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": "testhistorypagenopreload"
+    },
+    {
+      "label": ".test_history_does_not_preload_sprite()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L371",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testhistorypagenopreload_test_history_does_not_preload_sprite",
+      "community": 14,
+      "community_name": "test_tarot_sprite.py",
+      "norm_label": ".test_history_does_not_preload_sprite()"
+    },
+    {
+      "label": "TestApiReturnsSpriteCoords",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L382",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testapireturnsspritecoords",
+      "community": 17,
+      "community_name": "TestApiReturnsSpriteCoords",
+      "norm_label": "testapireturnsspritecoords"
+    },
+    {
+      "label": ".setUp()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L391",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testapireturnsspritecoords_setup",
+      "community": 17,
+      "community_name": "TestApiReturnsSpriteCoords",
+      "norm_label": ".setup()"
+    },
+    {
+      "label": "._get_csrf_token()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L395",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testapireturnsspritecoords_get_csrf_token",
+      "community": 17,
+      "community_name": "TestApiReturnsSpriteCoords",
+      "norm_label": "._get_csrf_token()"
+    },
+    {
+      "label": ".test_draw_single_includes_sprite_coords()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L403",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testapireturnsspritecoords_test_draw_single_includes_sprite_coords",
+      "community": 17,
+      "community_name": "TestApiReturnsSpriteCoords",
+      "norm_label": ".test_draw_single_includes_sprite_coords()"
+    },
+    {
+      "label": ".test_api_backward_compat_existing_fields()",
+      "file_type": "code",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L426",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_testapireturnsspritecoords_test_api_backward_compat_existing_fields",
+      "community": 17,
+      "community_name": "TestApiReturnsSpriteCoords",
+      "norm_label": ".test_api_backward_compat_existing_fields()"
+    },
+    {
+      "label": "\u9a57\u8b49 build_sprite.py \u5728\u7f3a\u5716\u6642 fail-fast\u3002 \u9700\u6c42: - sys.exit(1) - \u4e0d\u7522\u51fa sprite(\u82e5\u5df2\u5b58\u5728 stale\u2026",
+      "file_type": "rationale",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_rationale_64",
+      "community": 18,
+      "community_name": "TestBuildSpriteFailFast",
+      "norm_label": "\u9a57\u8b49 build_sprite.py \u5728\u7f3a\u5716\u6642 fail-fast\u3002 \u9700\u6c42: - sys.exit(1) - \u4e0d\u7522\u51fa sprite(\u82e5\u5df2\u5b58\u5728 stale..."
+    },
+    {
+      "label": "\u4ee5 patch \u904e\u7684\u5e38\u6578\u91cd\u65b0 import build_sprite\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L103",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_rationale_103",
+      "community": 18,
+      "community_name": "TestBuildSpriteFailFast",
+      "norm_label": "\u4ee5 patch \u904e\u7684\u5e38\u6578\u91cd\u65b0 import build_sprite\u3002"
+    },
+    {
+      "label": "\u9a57\u8b49 _http_get_bytes \u5728 HTTP 5xx \u8207 URLError \u4e0a\u6703\u9000\u907f\u91cd\u8a66\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L175",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_rationale_175",
+      "community": 19,
+      "community_name": "TestDownloadSourcesBackoff",
+      "norm_label": "\u9a57\u8b49 _http_get_bytes \u5728 http 5xx \u8207 urlerror \u4e0a\u6703\u9000\u907f\u91cd\u8a66\u3002"
+    },
+    {
+      "label": "\u9a57\u8b49 User-Agent \u7b26\u5408 Wikimedia User-Agent \u653f\u7b56(\u8b58\u5225\u578b,\u4e0d\u507d\u88dd\u700f\u89bd\u5668)\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L246",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_rationale_246",
+      "community": 19,
+      "community_name": "TestDownloadSourcesBackoff",
+      "norm_label": "\u9a57\u8b49 user-agent \u7b26\u5408 wikimedia user-agent \u653f\u7b56(\u8b58\u5225\u578b,\u4e0d\u507d\u88dd\u700f\u89bd\u5668)\u3002"
+    },
+    {
+      "label": "\u9a57\u8b49\u5360\u535c\u9801\u6a21\u677f\u5305\u542b sprite sheet preload link \u8207\u5be6\u969b\u5361\u9762\u5bb9\u5668\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L330",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_rationale_330",
+      "community": 16,
+      "community_name": "TestDivinationPagePreload",
+      "norm_label": "\u9a57\u8b49\u5360\u535c\u9801\u6a21\u677f\u5305\u542b sprite sheet preload link \u8207\u5be6\u969b\u5361\u9762\u5bb9\u5668\u3002"
+    },
+    {
+      "label": "\u820a\u7684 inline .card-face \u6e32\u67d3\u5fc5\u9808\u79fb\u9664,\u5426\u5247 sprite CSS \u4e0d\u6703\u751f\u6548\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L362",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_rationale_362",
+      "community": 16,
+      "community_name": "TestDivinationPagePreload",
+      "norm_label": "\u820a\u7684 inline .card-face \u6e32\u67d3\u5fc5\u9808\u79fb\u9664,\u5426\u5247 sprite css \u4e0d\u6703\u751f\u6548\u3002"
+    },
+    {
+      "label": "\u9a57\u8b49 draw API \u540c\u6642\u56de\u50b3 sprite \u5ea7\u6a19,\u4e14\u65e2\u6709\u6b04\u4f4d\u672a\u6d88\u5931\u3002 \u8aaa\u660e: - app.py \u4f7f\u7528\u81ea\u8a02 CSRF middleware,token \u900f\u904e\u2026",
+      "file_type": "rationale",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L383",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_rationale_383",
+      "community": 17,
+      "community_name": "TestApiReturnsSpriteCoords",
+      "norm_label": "\u9a57\u8b49 draw api \u540c\u6642\u56de\u50b3 sprite \u5ea7\u6a19,\u4e14\u65e2\u6709\u6b04\u4f4d\u672a\u6d88\u5931\u3002 \u8aaa\u660e: - app.py \u4f7f\u7528\u81ea\u8a02 csrf middleware,token \u900f\u904e..."
+    },
+    {
+      "label": "\u5f9e /single-card \u9801\u9762\u53d6\u5f97 csrf_token\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L396",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_rationale_396",
+      "community": 17,
+      "community_name": "TestApiReturnsSpriteCoords",
+      "norm_label": "\u5f9e /single-card \u9801\u9762\u53d6\u5f97 csrf_token\u3002"
+    },
+    {
+      "label": "\u78ba\u4fdd\u65b0\u589e sprite \u5ea7\u6a19\u5f8c,\u65e2\u6709\u6b04\u4f4d\u4ecd\u5b8c\u6574\u4fdd\u7559\u3002",
+      "file_type": "rationale",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L427",
+      "_origin": "ast",
+      "id": "tests_test_tarot_sprite_rationale_427",
+      "community": 17,
+      "community_name": "TestApiReturnsSpriteCoords",
+      "norm_label": "\u78ba\u4fdd\u65b0\u589e sprite \u5ea7\u6a19\u5f8c,\u65e2\u6709\u6b04\u4f4d\u4ecd\u5b8c\u6574\u4fdd\u7559\u3002"
+    },
+    {
       "label": "test_app.py",
       "file_type": "code",
       "source_file": "tests/test_app.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "tests_test_app",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": "test_app.py"
+      "norm_label": "test_app.py",
+      "id": "tests_test_app"
     },
     {
       "label": "TestTarotApp",
@@ -100,10 +1134,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "tests_test_app_testtarotapp",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": "testtarotapp"
+      "norm_label": "testtarotapp",
+      "id": "tests_test_app_testtarotapp"
     },
     {
       "label": ".setUp()",
@@ -111,10 +1145,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "tests_test_app_testtarotapp_setup",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": ".setup()"
+      "norm_label": ".setup()",
+      "id": "tests_test_app_testtarotapp_setup"
     },
     {
       "label": ".test_index_page()",
@@ -122,10 +1156,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "tests_test_app_testtarotapp_test_index_page",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": ".test_index_page()"
+      "norm_label": ".test_index_page()",
+      "id": "tests_test_app_testtarotapp_test_index_page"
     },
     {
       "label": ".test_single_card_page()",
@@ -133,10 +1167,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L25",
       "_origin": "ast",
-      "id": "tests_test_app_testtarotapp_test_single_card_page",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": ".test_single_card_page()"
+      "norm_label": ".test_single_card_page()",
+      "id": "tests_test_app_testtarotapp_test_single_card_page"
     },
     {
       "label": ".test_three_cards_page()",
@@ -144,10 +1178,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "tests_test_app_testtarotapp_test_three_cards_page",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": ".test_three_cards_page()"
+      "norm_label": ".test_three_cards_page()",
+      "id": "tests_test_app_testtarotapp_test_three_cards_page"
     },
     {
       "label": ".test_celtic_cross_page()",
@@ -155,10 +1189,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L37",
       "_origin": "ast",
-      "id": "tests_test_app_testtarotapp_test_celtic_cross_page",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": ".test_celtic_cross_page()"
+      "norm_label": ".test_celtic_cross_page()",
+      "id": "tests_test_app_testtarotapp_test_celtic_cross_page"
     },
     {
       "label": ".test_history_page()",
@@ -166,10 +1200,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L43",
       "_origin": "ast",
-      "id": "tests_test_app_testtarotapp_test_history_page",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": ".test_history_page()"
+      "norm_label": ".test_history_page()",
+      "id": "tests_test_app_testtarotapp_test_history_page"
     },
     {
       "label": ".test_tarot_cards_have_sprite_coordinates()",
@@ -177,10 +1211,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L48",
       "_origin": "ast",
-      "id": "tests_test_app_testtarotapp_test_tarot_cards_have_sprite_coordinates",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": ".test_tarot_cards_have_sprite_coordinates()"
+      "norm_label": ".test_tarot_cards_have_sprite_coordinates()",
+      "id": "tests_test_app_testtarotapp_test_tarot_cards_have_sprite_coordinates"
     },
     {
       "label": ".test_tarot_cards_follow_sprite_order()",
@@ -188,10 +1222,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L59",
       "_origin": "ast",
-      "id": "tests_test_app_testtarotapp_test_tarot_cards_follow_sprite_order",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": ".test_tarot_cards_follow_sprite_order()"
+      "norm_label": ".test_tarot_cards_follow_sprite_order()",
+      "id": "tests_test_app_testtarotapp_test_tarot_cards_follow_sprite_order"
     },
     {
       "label": ".test_api_draw_single_without_csrf()",
@@ -199,10 +1233,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L72",
       "_origin": "ast",
-      "id": "tests_test_app_testtarotapp_test_api_draw_single_without_csrf",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": ".test_api_draw_single_without_csrf()"
+      "norm_label": ".test_api_draw_single_without_csrf()",
+      "id": "tests_test_app_testtarotapp_test_api_draw_single_without_csrf"
     },
     {
       "label": ".test_api_draw_single_valid_csrf()",
@@ -210,10 +1244,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L77",
       "_origin": "ast",
-      "id": "tests_test_app_testtarotapp_test_api_draw_single_valid_csrf",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": ".test_api_draw_single_valid_csrf()"
+      "norm_label": ".test_api_draw_single_valid_csrf()",
+      "id": "tests_test_app_testtarotapp_test_api_draw_single_valid_csrf"
     },
     {
       "label": "\u6e2c\u8a66\u55ae\u5f35\u724c\u9801\u9762\u6e32\u67d3\uff08\u5305\u542b csrf_token\uff09",
@@ -221,10 +1255,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L26",
       "_origin": "ast",
-      "id": "tests_test_app_rationale_26",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": "\u6e2c\u8a66\u55ae\u5f35\u724c\u9801\u9762\u6e32\u67d3(\u5305\u542b csrf_token)"
+      "norm_label": "\u6e2c\u8a66\u55ae\u5f35\u724c\u9801\u9762\u6e32\u67d3(\u5305\u542b csrf_token)",
+      "id": "tests_test_app_rationale_26"
     },
     {
       "label": "\u6bcf\u5f35\u724c\u90fd\u61c9\u5305\u542b 13 \u6b04 6 \u5217 sprite \u5ea7\u6a19\u3002",
@@ -232,10 +1266,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L49",
       "_origin": "ast",
-      "id": "tests_test_app_rationale_49",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": "\u6bcf\u5f35\u724c\u90fd\u61c9\u5305\u542b 13 \u6b04 6 \u5217 sprite \u5ea7\u6a19\u3002"
+      "norm_label": "\u6bcf\u5f35\u724c\u90fd\u61c9\u5305\u542b 13 \u6b04 6 \u5217 sprite \u5ea7\u6a19\u3002",
+      "id": "tests_test_app_rationale_49"
     },
     {
       "label": "\u724c\u9762\u9806\u5e8f\u61c9\u70ba Major \u5f8c\u63a5\u56db\u7d44 Minor\u3002",
@@ -243,10 +1277,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L60",
       "_origin": "ast",
-      "id": "tests_test_app_rationale_60",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": "\u724c\u9762\u9806\u5e8f\u61c9\u70ba major \u5f8c\u63a5\u56db\u7d44 minor\u3002"
+      "norm_label": "\u724c\u9762\u9806\u5e8f\u61c9\u70ba major \u5f8c\u63a5\u56db\u7d44 minor\u3002",
+      "id": "tests_test_app_rationale_60"
     },
     {
       "label": "\u6e2c\u8a66\u7121 CSRF Token \u7684\u8acb\u6c42\u61c9\u88ab\u62d2\u7d55 (403)",
@@ -254,10 +1288,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L73",
       "_origin": "ast",
-      "id": "tests_test_app_rationale_73",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": "\u6e2c\u8a66\u7121 csrf token \u7684\u8acb\u6c42\u61c9\u88ab\u62d2\u7d55 (403)"
+      "norm_label": "\u6e2c\u8a66\u7121 csrf token \u7684\u8acb\u6c42\u61c9\u88ab\u62d2\u7d55 (403)",
+      "id": "tests_test_app_rationale_73"
     },
     {
       "label": "\u6e2c\u8a66\u5408\u6cd5 CSRF Token \u7684\u62bd\u724c API",
@@ -265,10 +1299,10 @@
       "source_file": "tests/test_app.py",
       "source_location": "L78",
       "_origin": "ast",
-      "id": "tests_test_app_rationale_78",
       "community": 4,
       "community_name": "TestTarotApp",
-      "norm_label": "\u6e2c\u8a66\u5408\u6cd5 csrf token \u7684\u62bd\u724c api"
+      "norm_label": "\u6e2c\u8a66\u5408\u6cd5 csrf token \u7684\u62bd\u724c api",
+      "id": "tests_test_app_rationale_78"
     },
     {
       "label": "2026-08-02-tarot-card-sprite-redesign.md",
@@ -496,8 +1530,8 @@
       "source_file": "docs/superpowers/specs/2026-08-02-tarot-card-sprite-redesign-design.md",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "\u8a2d\u8a08\u6c7a\u7b56",
+      "community": 11,
+      "community_name": "Tarot Card Sprite Redesign \u2014 \u8a2d\u8a08\u898f\u683c",
       "norm_label": "\u8a2d\u8a08\u6c7a\u7b56",
       "id": "docs_superpowers_specs_2026_08_02_tarot_card_sprite_redesign_design_\u8a2d\u8a08\u6c7a\u7b56"
     },
@@ -507,8 +1541,8 @@
       "source_file": "docs/superpowers/specs/2026-08-02-tarot-card-sprite-redesign-design.md",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "\u8a2d\u8a08\u6c7a\u7b56",
+      "community": 11,
+      "community_name": "Tarot Card Sprite Redesign \u2014 \u8a2d\u8a08\u898f\u683c",
       "norm_label": "d1 \u2014 \u7d20\u6750:\u516c\u5171\u9818\u57df jpg sprite sheet",
       "id": "docs_superpowers_specs_2026_08_02_tarot_card_sprite_redesign_design_d1_\u7d20\u6750_\u516c\u5171\u9818\u57df_jpg_sprite_sheet"
     },
@@ -518,8 +1552,8 @@
       "source_file": "docs/superpowers/specs/2026-08-02-tarot-card-sprite-redesign-design.md",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "\u8a2d\u8a08\u6c7a\u7b56",
+      "community": 11,
+      "community_name": "Tarot Card Sprite Redesign \u2014 \u8a2d\u8a08\u898f\u683c",
       "norm_label": "d2 \u2014 \u8f09\u5165\u7b56\u7565:lazy load + \u9810\u8f09\u63d0\u793a",
       "id": "docs_superpowers_specs_2026_08_02_tarot_card_sprite_redesign_design_d2_\u8f09\u5165\u7b56\u7565_lazy_load_\u9810\u8f09\u63d0\u793a"
     },
@@ -529,8 +1563,8 @@
       "source_file": "docs/superpowers/specs/2026-08-02-tarot-card-sprite-redesign-design.md",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "\u8a2d\u8a08\u6c7a\u7b56",
+      "community": 11,
+      "community_name": "Tarot Card Sprite Redesign \u2014 \u8a2d\u8a08\u898f\u683c",
       "norm_label": "d3 \u2014 \u6e32\u67d3\u65b9\u5f0f:css \u8b8a\u6578\u9a45\u52d5 background-position",
       "id": "docs_superpowers_specs_2026_08_02_tarot_card_sprite_redesign_design_d3_\u6e32\u67d3\u65b9\u5f0f_css_\u8b8a\u6578\u9a45\u52d5_background_position"
     },
@@ -540,8 +1574,8 @@
       "source_file": "docs/superpowers/specs/2026-08-02-tarot-card-sprite-redesign-design.md",
       "source_location": "L77",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "\u8a2d\u8a08\u6c7a\u7b56",
+      "community": 11,
+      "community_name": "Tarot Card Sprite Redesign \u2014 \u8a2d\u8a08\u898f\u683c",
       "norm_label": "d4 \u2014 \u9006\u4f4d:data \u5c6c\u6027 + css transform",
       "id": "docs_superpowers_specs_2026_08_02_tarot_card_sprite_redesign_design_d4_\u9006\u4f4d_data_\u5c6c\u6027_css_transform"
     },
@@ -551,8 +1585,8 @@
       "source_file": "docs/superpowers/specs/2026-08-02-tarot-card-sprite-redesign-design.md",
       "source_location": "L83",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "\u8a2d\u8a08\u6c7a\u7b56",
+      "community": 11,
+      "community_name": "Tarot Card Sprite Redesign \u2014 \u8a2d\u8a08\u898f\u683c",
       "norm_label": "d5 \u2014 \u5411\u5f8c\u76f8\u5bb9",
       "id": "docs_superpowers_specs_2026_08_02_tarot_card_sprite_redesign_design_d5_\u5411\u5f8c\u76f8\u5bb9"
     },
@@ -929,39 +1963,6 @@
       "norm_label": "setup_git_sync.ps1",
       "community_name": "setup_git_sync.ps1",
       "id": "setup_git_sync"
-    },
-    {
-      "label": "divination.js",
-      "file_type": "code",
-      "source_file": "static/js/divination.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "divination.js",
-      "community_name": "divination.js",
-      "id": "static_js_divination"
-    },
-    {
-      "label": "Divination",
-      "file_type": "code",
-      "source_file": "static/js/divination.js",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "divination",
-      "community_name": "divination.js",
-      "id": "static_js_divination_divination"
-    },
-    {
-      "label": "divinationStyle",
-      "file_type": "code",
-      "source_file": "static/js/divination.js",
-      "source_location": "L248",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "divinationstyle",
-      "community_name": "divination.js",
-      "id": "static_js_divination_divinationstyle"
     },
     {
       "label": "main.js",
@@ -1938,6 +2939,1175 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/divination.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "static_js_divination",
+      "target": "static_js_divination_divination",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/js/divination.js",
+      "source_location": "L330",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "static_js_divination",
+      "target": "static_js_divination_divinationstyle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip",
+      "target": "tests_test_card_flip_testcardbacksvg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip",
+      "target": "tests_test_card_flip_testcardflipcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip",
+      "target": "tests_test_card_flip_testrendercardwithflip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L94",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip",
+      "target": "tests_test_card_flip_testtemplatesuseflip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_rationale_1",
+      "target": "tests_test_card_flip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testcardbacksvg",
+      "target": "tests_test_card_flip_testcardbacksvg_test_svg_exists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testcardbacksvg",
+      "target": "tests_test_card_flip_testcardbacksvg_test_svg_has_rose_window",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testcardbacksvg",
+      "target": "tests_test_card_flip_testcardbacksvg_test_svg_is_well_formed_xml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_rationale_13",
+      "target": "tests_test_card_flip_testcardbacksvg_test_svg_exists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testcardflipcss",
+      "target": "tests_test_card_flip_testcardflipcss_setupclass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testcardflipcss",
+      "target": "tests_test_card_flip_testcardflipcss_test_front_face_rotated_180",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testcardflipcss",
+      "target": "tests_test_card_flip_testcardflipcss_test_has_card_face_with_backface_visibility",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testcardflipcss",
+      "target": "tests_test_card_flip_testcardflipcss_test_has_flip_container_rule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testcardflipcss",
+      "target": "tests_test_card_flip_testcardflipcss_test_has_flip_inner_with_3d_transform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testcardflipcss",
+      "target": "tests_test_card_flip_testcardflipcss_test_has_flipped_state",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_rationale_58",
+      "target": "tests_test_card_flip_testcardflipcss_test_front_face_rotated_180",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L66",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testrendercardwithflip",
+      "target": "tests_test_card_flip_testrendercardwithflip_setupclass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testrendercardwithflip",
+      "target": "tests_test_card_flip_testrendercardwithflip_test_builds_flip_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testrendercardwithflip",
+      "target": "tests_test_card_flip_testrendercardwithflip_test_delegates_to_render_card",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testrendercardwithflip",
+      "target": "tests_test_card_flip_testrendercardwithflip_test_method_exists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L89",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testrendercardwithflip",
+      "target": "tests_test_card_flip_testrendercardwithflip_test_uses_requestanimationframe_to_defer_flip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_rationale_70",
+      "target": "tests_test_card_flip_testrendercardwithflip_test_method_exists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_rationale_74",
+      "target": "tests_test_card_flip_testrendercardwithflip_test_builds_flip_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_rationale_84",
+      "target": "tests_test_card_flip_testrendercardwithflip_test_delegates_to_render_card",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_rationale_90",
+      "target": "tests_test_card_flip_testrendercardwithflip_test_uses_requestanimationframe_to_defer_flip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_rationale_95",
+      "target": "tests_test_card_flip_testtemplatesuseflip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testtemplatesuseflip",
+      "target": "tests_test_card_flip_testtemplatesuseflip_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L125",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testtemplatesuseflip",
+      "target": "tests_test_card_flip_testtemplatesuseflip_test_cards_respect_backface_visibility_safe_html",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L110",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testtemplatesuseflip",
+      "target": "tests_test_card_flip_testtemplatesuseflip_test_celtic_cross_uses_flip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testtemplatesuseflip",
+      "target": "tests_test_card_flip_testtemplatesuseflip_test_no_template_still_calls_rendercard_directly",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testtemplatesuseflip",
+      "target": "tests_test_card_flip_testtemplatesuseflip_test_single_card_uses_flip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testtemplatesuseflip",
+      "target": "tests_test_card_flip_testtemplatesuseflip_test_three_cards_uses_flip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testtemplatesuseflip_test_cards_respect_backface_visibility_safe_html",
+      "target": "tests_test_card_flip_testtemplatesuseflip_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testtemplatesuseflip_test_celtic_cross_uses_flip",
+      "target": "tests_test_card_flip_testtemplatesuseflip_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testtemplatesuseflip_test_single_card_uses_flip",
+      "target": "tests_test_card_flip_testtemplatesuseflip_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_testtemplatesuseflip_test_three_cards_uses_flip",
+      "target": "tests_test_card_flip_testtemplatesuseflip_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_rationale_115",
+      "target": "tests_test_card_flip_testtemplatesuseflip_test_no_template_still_calls_rendercard_directly",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_card_flip.py",
+      "source_location": "L126",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_card_flip_rationale_126",
+      "target": "tests_test_card_flip_testtemplatesuseflip_test_cards_respect_backface_visibility_safe_html",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite",
+      "target": "app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L382",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite",
+      "target": "tests_test_tarot_sprite_testapireturnsspritecoords",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L318",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite",
+      "target": "tests_test_tarot_sprite_testbasetemplatecss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite",
+      "target": "tests_test_tarot_sprite_testbuildspritefailfast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L256",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite",
+      "target": "tests_test_tarot_sprite_testcardspritecss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L285",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite",
+      "target": "tests_test_tarot_sprite_testdivinationjssprite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L329",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L174",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite",
+      "target": "tests_test_tarot_sprite_testdownloadsourcesbackoff",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L369",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite",
+      "target": "tests_test_tarot_sprite_testhistorypagenopreload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite",
+      "target": "tests_test_tarot_sprite_testspritecoordinates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite",
+      "target": "tests_test_tarot_sprite_testspritesheetasset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testspritecoordinates",
+      "target": "tests_test_tarot_sprite_testspritecoordinates_setupclass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testspritecoordinates",
+      "target": "tests_test_tarot_sprite_testspritecoordinates_test_all_78_cards_exist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testspritecoordinates",
+      "target": "tests_test_tarot_sprite_testspritecoordinates_test_every_card_has_sprite_coords",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testspritecoordinates",
+      "target": "tests_test_tarot_sprite_testspritecoordinates_test_sprite_coords_in_range",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testspritecoordinates",
+      "target": "tests_test_tarot_sprite_testspritecoordinates_test_sprite_coords_unique",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testspritesheetasset",
+      "target": "tests_test_tarot_sprite_testspritesheetasset_test_sprite_jpg_dimensions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testspritesheetasset",
+      "target": "tests_test_tarot_sprite_testspritesheetasset_test_sprite_jpg_exists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_rationale_64",
+      "target": "tests_test_tarot_sprite_testbuildspritefailfast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testbuildspritefailfast",
+      "target": "tests_test_tarot_sprite_testbuildspritefailfast_import_build_sprite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testbuildspritefailfast",
+      "target": "tests_test_tarot_sprite_testbuildspritefailfast_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L141",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testbuildspritefailfast",
+      "target": "tests_test_tarot_sprite_testbuildspritefailfast_test_missing_image_does_not_produce_sprite_and_deletes_stale",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testbuildspritefailfast",
+      "target": "tests_test_tarot_sprite_testbuildspritefailfast_test_missing_image_exits_with_code_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_rationale_103",
+      "target": "tests_test_tarot_sprite_testbuildspritefailfast_import_build_sprite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L175",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_rationale_175",
+      "target": "tests_test_tarot_sprite_testdownloadsourcesbackoff",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L227",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdownloadsourcesbackoff",
+      "target": "tests_test_tarot_sprite_testdownloadsourcesbackoff_test_does_not_retry_on_4xx_non_429",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L177",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdownloadsourcesbackoff",
+      "target": "tests_test_tarot_sprite_testdownloadsourcesbackoff_test_retries_on_http_5xx_then_succeeds",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L203",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdownloadsourcesbackoff",
+      "target": "tests_test_tarot_sprite_testdownloadsourcesbackoff_test_retries_on_urlerror_then_succeeds",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L245",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdownloadsourcesbackoff",
+      "target": "tests_test_tarot_sprite_testdownloadsourcesbackoff_test_user_agent_identifies_tool",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L246",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_rationale_246",
+      "target": "tests_test_tarot_sprite_testdownloadsourcesbackoff_test_user_agent_identifies_tool",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L265",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testcardspritecss",
+      "target": "tests_test_tarot_sprite_testcardspritecss_test_css_contains_base_rule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L278",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testcardspritecss",
+      "target": "tests_test_tarot_sprite_testcardspritecss_test_css_contains_pulse_animation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L272",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testcardspritecss",
+      "target": "tests_test_tarot_sprite_testcardspritecss_test_css_contains_reversed_rule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L261",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testcardspritecss",
+      "target": "tests_test_tarot_sprite_testcardspritecss_test_css_file_exists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L306",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationjssprite",
+      "target": "tests_test_tarot_sprite_testdivinationjssprite_test_clamps_sprite_coords",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L312",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationjssprite",
+      "target": "tests_test_tarot_sprite_testdivinationjssprite_test_handles_missing_sprite_coords",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L290",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationjssprite",
+      "target": "tests_test_tarot_sprite_testdivinationjssprite_test_rendercard_method_exists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L296",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationjssprite",
+      "target": "tests_test_tarot_sprite_testdivinationjssprite_test_sets_data_card_attribute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L301",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationjssprite",
+      "target": "tests_test_tarot_sprite_testdivinationjssprite_test_sets_data_reversed_attribute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L323",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testbasetemplatecss",
+      "target": "tests_test_tarot_sprite_testbasetemplatecss_test_base_includes_card_sprite_css",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L330",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_rationale_330",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L338",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationpagepreload",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload_assert_preload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L334",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationpagepreload",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload_read",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L355",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationpagepreload",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload_test_celtic_cross_has_preload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L361",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationpagepreload",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload_test_no_inline_card_face_rendering",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L343",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationpagepreload",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload_test_single_card_has_preload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L349",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationpagepreload",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload_test_three_cards_has_preload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L356",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationpagepreload_test_celtic_cross_has_preload",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload_read",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L364",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationpagepreload_test_no_inline_card_face_rendering",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload_read",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L344",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationpagepreload_test_single_card_has_preload",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload_read",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L350",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationpagepreload_test_three_cards_has_preload",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload_read",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L357",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationpagepreload_test_celtic_cross_has_preload",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload_assert_preload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L345",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationpagepreload_test_single_card_has_preload",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload_assert_preload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L351",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testdivinationpagepreload_test_three_cards_has_preload",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload_assert_preload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L362",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_rationale_362",
+      "target": "tests_test_tarot_sprite_testdivinationpagepreload_test_no_inline_card_face_rendering",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L371",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testhistorypagenopreload",
+      "target": "tests_test_tarot_sprite_testhistorypagenopreload_test_history_does_not_preload_sprite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L383",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_rationale_383",
+      "target": "tests_test_tarot_sprite_testapireturnsspritecoords",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L395",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testapireturnsspritecoords",
+      "target": "tests_test_tarot_sprite_testapireturnsspritecoords_get_csrf_token",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L391",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testapireturnsspritecoords",
+      "target": "tests_test_tarot_sprite_testapireturnsspritecoords_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L426",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testapireturnsspritecoords",
+      "target": "tests_test_tarot_sprite_testapireturnsspritecoords_test_api_backward_compat_existing_fields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L403",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testapireturnsspritecoords",
+      "target": "tests_test_tarot_sprite_testapireturnsspritecoords_test_draw_single_includes_sprite_coords",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L396",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_rationale_396",
+      "target": "tests_test_tarot_sprite_testapireturnsspritecoords_get_csrf_token",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L428",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testapireturnsspritecoords_test_api_backward_compat_existing_fields",
+      "target": "tests_test_tarot_sprite_testapireturnsspritecoords_get_csrf_token",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L404",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_testapireturnsspritecoords_test_draw_single_includes_sprite_coords",
+      "target": "tests_test_tarot_sprite_testapireturnsspritecoords_get_csrf_token",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_tarot_sprite.py",
+      "source_location": "L427",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_test_tarot_sprite_rationale_427",
+      "target": "tests_test_tarot_sprite_testapireturnsspritecoords_test_api_backward_compat_existing_fields",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -1945,9 +4115,9 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app",
-      "target": "app",
-      "confidence_score": 1.0
+      "target": "app"
     },
     {
       "relation": "contains",
@@ -1956,9 +4126,9 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app",
-      "target": "tests_test_app_testtarotapp",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp"
     },
     {
       "relation": "method",
@@ -1967,9 +4137,9 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app_testtarotapp",
-      "target": "tests_test_app_testtarotapp_setup",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp_setup"
     },
     {
       "relation": "method",
@@ -1978,9 +4148,9 @@
       "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app_testtarotapp",
-      "target": "tests_test_app_testtarotapp_test_api_draw_single_valid_csrf",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp_test_api_draw_single_valid_csrf"
     },
     {
       "relation": "method",
@@ -1989,9 +4159,9 @@
       "source_location": "L72",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app_testtarotapp",
-      "target": "tests_test_app_testtarotapp_test_api_draw_single_without_csrf",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp_test_api_draw_single_without_csrf"
     },
     {
       "relation": "method",
@@ -2000,9 +4170,9 @@
       "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app_testtarotapp",
-      "target": "tests_test_app_testtarotapp_test_celtic_cross_page",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp_test_celtic_cross_page"
     },
     {
       "relation": "method",
@@ -2011,9 +4181,9 @@
       "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app_testtarotapp",
-      "target": "tests_test_app_testtarotapp_test_history_page",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp_test_history_page"
     },
     {
       "relation": "method",
@@ -2022,9 +4192,9 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app_testtarotapp",
-      "target": "tests_test_app_testtarotapp_test_index_page",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp_test_index_page"
     },
     {
       "relation": "method",
@@ -2033,9 +4203,9 @@
       "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app_testtarotapp",
-      "target": "tests_test_app_testtarotapp_test_single_card_page",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp_test_single_card_page"
     },
     {
       "relation": "method",
@@ -2044,9 +4214,9 @@
       "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app_testtarotapp",
-      "target": "tests_test_app_testtarotapp_test_tarot_cards_follow_sprite_order",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp_test_tarot_cards_follow_sprite_order"
     },
     {
       "relation": "method",
@@ -2055,9 +4225,9 @@
       "source_location": "L48",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app_testtarotapp",
-      "target": "tests_test_app_testtarotapp_test_tarot_cards_have_sprite_coordinates",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp_test_tarot_cards_have_sprite_coordinates"
     },
     {
       "relation": "method",
@@ -2066,9 +4236,9 @@
       "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app_testtarotapp",
-      "target": "tests_test_app_testtarotapp_test_three_cards_page",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp_test_three_cards_page"
     },
     {
       "relation": "rationale_for",
@@ -2077,9 +4247,9 @@
       "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app_rationale_26",
-      "target": "tests_test_app_testtarotapp_test_single_card_page",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp_test_single_card_page"
     },
     {
       "relation": "rationale_for",
@@ -2088,9 +4258,9 @@
       "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app_rationale_49",
-      "target": "tests_test_app_testtarotapp_test_tarot_cards_have_sprite_coordinates",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp_test_tarot_cards_have_sprite_coordinates"
     },
     {
       "relation": "rationale_for",
@@ -2099,9 +4269,9 @@
       "source_location": "L60",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app_rationale_60",
-      "target": "tests_test_app_testtarotapp_test_tarot_cards_follow_sprite_order",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp_test_tarot_cards_follow_sprite_order"
     },
     {
       "relation": "rationale_for",
@@ -2110,9 +4280,9 @@
       "source_location": "L73",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app_rationale_73",
-      "target": "tests_test_app_testtarotapp_test_api_draw_single_without_csrf",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp_test_api_draw_single_without_csrf"
     },
     {
       "relation": "rationale_for",
@@ -2121,9 +4291,9 @@
       "source_location": "L78",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_test_app_rationale_78",
-      "target": "tests_test_app_testtarotapp_test_api_draw_single_valid_csrf",
-      "confidence_score": 1.0
+      "target": "tests_test_app_testtarotapp_test_api_draw_single_valid_csrf"
     },
     {
       "relation": "contains",
@@ -2898,28 +5068,6 @@
       "confidence_score": 1.0,
       "source": "app_three_cards",
       "target": "route"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/js/divination.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "static_js_divination",
-      "target": "static_js_divination_divination"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/js/divination.js",
-      "source_location": "L248",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "static_js_divination",
-      "target": "static_js_divination_divinationstyle"
     },
     {
       "relation": "contains",
@@ -4047,5 +6195,5 @@
       "source_file": "images/Tarot01.jpg"
     }
   ],
-  "built_at_commit": "69ef1c4047b7b2a0260f220d29d344dd0ac90344"
+  "built_at_commit": "5800a0b8f0d939a738d7c8f17022d4fd87e32f7d"
 }

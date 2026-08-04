@@ -1,16 +1,16 @@
 # Graph Report - VibeCodingTarot  (2026-08-04)
 
 ## Corpus Check
-- 27 files · ~93,380 words
+- 28 files · ~94,263 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 152 nodes · 191 edges · 14 communities (10 shown, 4 thin omitted)
-- Extraction: 87% EXTRACTED · 13% INFERRED · 0% AMBIGUOUS · INFERRED: 25 edges (avg confidence: 0.82)
+- 243 nodes · 294 edges · 20 communities (16 shown, 4 thin omitted)
+- Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 25 edges (avg confidence: 0.82)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `69ef1c40`
+- Built from commit: `5800a0b8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -27,19 +27,25 @@
 - Venv Setup Notes
 - Tarot Card Sprite Redesign — 設計規格
 - Tarot Card Sprite Redesign Implementation Plan
-- 設計決策
+- TestCardFlipCss
+- test_tarot_sprite.py
+- TestTemplatesUseFlip
+- TestDivinationPagePreload
+- TestApiReturnsSpriteCoords
+- TestBuildSpriteFailFast
+- TestDownloadSourcesBackoff
 
 ## God Nodes (most connected - your core abstractions)
 1. `Tarot Card Sprite Redesign Implementation Plan` - 15 edges
 2. `TestTarotApp` - 11 edges
 3. `Tarot Card Sprite Redesign — 設計規格` - 11 edges
-4. `Base Template` - 8 edges
-5. `VibeCodingTarot Homepage Screenshot` - 8 edges
-6. `Architecture Decision Records` - 7 edges
-7. `API Endpoint /api/draw-single` - 7 edges
-8. `API Endpoint /api/draw-three` - 7 edges
-9. `設計決策` - 6 edges
-10. `validate_csrf_token()` - 6 edges
+4. `TestTemplatesUseFlip` - 8 edges
+5. `TestDivinationPagePreload` - 8 edges
+6. `Base Template` - 8 edges
+7. `VibeCodingTarot Homepage Screenshot` - 8 edges
+8. `TestCardFlipCss` - 7 edges
+9. `Architecture Decision Records` - 7 edges
+10. `API Endpoint /api/draw-single` - 7 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Base Template` --conceptually_related_to--> `Purple Gradient Theme Decision`  [INFERRED]
@@ -63,7 +69,7 @@
 - **Homepage Visual Layout Sections** — images_tarot01_navigation_menu, images_tarot01_hero_section, images_tarot01_divination_method_selector, images_tarot01_major_arcana_gallery, images_tarot01_feature_highlights, images_tarot01_version_footer [EXTRACTED 1.00]
 - **Three Divination Spread Options** — images_tarot01_single_card_spread, images_tarot01_three_card_spread, images_tarot01_celtic_cross_spread [EXTRACTED 1.00]
 
-## Communities (14 total, 4 thin omitted)
+## Communities (20 total, 4 thin omitted)
 
 ### Community 0 - "CLAUDE.md"
 Cohesion: 0.19
@@ -90,34 +96,60 @@ Cohesion: 0.32
 Nodes (8): Architecture Document, Flask Framework Decision, Frontend Rendering Decision, JSON File Storage Decision, No Account System Decision, Single-Page Template Pattern, Architecture Decision Records, Python Requirements
 
 ### Community 11 - "Tarot Card Sprite Redesign — 設計規格"
-Cohesion: 0.11
-Nodes (18): DoD, Manual QA Checklist, Out of Scope, Tarot Card Sprite Redesign — 設計規格, 保持不變, 修改檔案, 元件, 單元測試（擴充 `tests/test_app.py`） (+10 more)
+Cohesion: 0.08
+Nodes (24): D1 — 素材：公共領域 JPG sprite sheet, D2 — 載入策略：Lazy load + 預載提示, D3 — 渲染方式：CSS 變數驅動 background-position, D4 — 逆位：data 屬性 + CSS transform, D5 — 向後相容, DoD, Manual QA Checklist, Out of Scope (+16 more)
 
 ### Community 12 - "Tarot Card Sprite Redesign Implementation Plan"
 Cohesion: 0.12
 Nodes (15): File Structure, Self-Review Checklist, Tarot Card Sprite Redesign Implementation Plan, Task 10: 全部測試回歸, Task 11: 手動視覺驗證 78 張牌, Task 12: 建立 Pull Request, Task 1: 為 tarot_cards.json 加入 sprite 座標, Task 2: 建立 sprite sheet 組裝腳本 (+7 more)
 
-### Community 13 - "設計決策"
-Cohesion: 0.33
-Nodes (6): D1 — 素材：公共領域 JPG sprite sheet, D2 — 載入策略：Lazy load + 預載提示, D3 — 渲染方式：CSS 變數驅動 background-position, D4 — 逆位：data 屬性 + CSS transform, D5 — 向後相容, 設計決策
+### Community 13 - "TestCardFlipCss"
+Cohesion: 0.08
+Nodes (10): 塔羅牌翻牌動畫 + 自訂 SVG 牌背測試。, tarot-card-back.svg 必須存在。, 正面 .card-face-front 必須旋轉 180deg 以配合背面。, Divination.renderCardWithFlip 必須存在。, 方法應插入 .card-flip-container + .card-flip-inner + 兩個 .card-face。, 應在 front face 呼叫 renderCard 來放 sprite。, 應用 requestAnimationFrame 等一幀才觸發翻牌。, TestCardBackSvg (+2 more)
+
+### Community 14 - "test_tarot_sprite.py"
+Cohesion: 0.08
+Nodes (6): TestBaseTemplateCss, TestCardSpriteCss, TestDivinationJsSprite, TestHistoryPageNoPreload, TestSpriteCoordinates, TestSpriteSheetAsset
+
+### Community 15 - "TestTemplatesUseFlip"
+Cohesion: 0.29
+Nodes (4): 不再有「裸的 renderCard(...)」呼叫,確保翻牌動畫全站生效。, escapeHtml 已用於 card name(keyword/position),翻牌動畫不引入 XSS。, 3 個占卜模板都應呼叫 renderCardWithFlip 而非 renderCard。, TestTemplatesUseFlip
+
+### Community 16 - "TestDivinationPagePreload"
+Cohesion: 0.42
+Nodes (3): 驗證占卜頁模板包含 sprite sheet preload link 與實際卡面容器。, 舊的 inline .card-face 渲染必須移除,否則 sprite CSS 不會生效。, TestDivinationPagePreload
+
+### Community 17 - "TestApiReturnsSpriteCoords"
+Cohesion: 0.32
+Nodes (4): 驗證 draw API 同時回傳 sprite 座標,且既有欄位未消失。 說明: - app.py 使用自訂 CSRF middleware,token 透過…, 從 /single-card 頁面取得 csrf_token。, 確保新增 sprite 座標後,既有欄位仍完整保留。, TestApiReturnsSpriteCoords
+
+### Community 18 - "TestBuildSpriteFailFast"
+Cohesion: 0.29
+Nodes (3): 以 patch 過的常數重新 import build_sprite。, 驗證 build_sprite.py 在缺圖時 fail-fast。 需求: - sys.exit(1) - 不產出 sprite(若已存在 stale…, TestBuildSpriteFailFast
+
+### Community 19 - "TestDownloadSourcesBackoff"
+Cohesion: 0.29
+Nodes (3): 驗證 _http_get_bytes 在 HTTP 5xx 與 URLError 上會退避重試。, 驗證 User-Agent 符合 Wikimedia User-Agent 政策(識別型,不偽裝瀏覽器)。, TestDownloadSourcesBackoff
 
 ## Knowledge Gaps
-- **49 isolated node(s):** `File Structure`, `Task 1: 為 tarot_cards.json 加入 sprite 座標`, `Task 2: 建立 sprite sheet 組裝腳本`, `Task 3: 建立 card-sprite.css`, `Task 4: 在 divination.js 新增 renderCard 方法` (+44 more)
+- **49 isolated node(s):** `Divination`, `divinationStyle`, `File Structure`, `Task 1: 為 tarot_cards.json 加入 sprite 座標`, `Task 2: 建立 sprite sheet 組裝腳本` (+44 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Architecture Decision Records` connect `Architecture Decision Records` to `CLAUDE.md`, `Base Template`?**
-  _High betweenness centrality (0.024) - this node is a cross-community bridge._
-- **Why does `Tarot Card Sprite Redesign — 設計規格` connect `Tarot Card Sprite Redesign — 設計規格` to `設計決策`?**
-  _High betweenness centrality (0.022) - this node is a cross-community bridge._
-- **What connects `File Structure`, `Task 1: 為 tarot_cards.json 加入 sprite 座標`, `Task 2: 建立 sprite sheet 組裝腳本` to the rest of the system?**
+- **Why does `TestDivinationPagePreload` connect `TestDivinationPagePreload` to `test_tarot_sprite.py`?**
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
+- **Why does `TestApiReturnsSpriteCoords` connect `TestApiReturnsSpriteCoords` to `test_tarot_sprite.py`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **What connects `Divination`, `divinationStyle`, `File Structure` to the rest of the system?**
   _49 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `TestTarotApp` be split into smaller, more focused modules?**
   _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
 - **Should `Tarot Card Sprite Redesign — 設計規格` be split into smaller, more focused modules?**
-  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `Tarot Card Sprite Redesign Implementation Plan` be split into smaller, more focused modules?**
   _Cohesion score 0.125 - nodes in this community are weakly interconnected._
+- **Should `TestCardFlipCss` be split into smaller, more focused modules?**
+  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
