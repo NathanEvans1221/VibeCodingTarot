@@ -8,7 +8,6 @@
 ## [Unreleased]
 
 ### 新增
-- 新增 GitHub Actions CI workflow (`.github/workflows/ci.yml`)：Python 3.11 / 3.12 矩陣，跑完整 pytest 測試套件與 sprite 完整性檢查，push 至 `main` 與 PR 皆觸發
 - 整合 Rider-Waite 古典 78 張塔羅牌 sprite sheet (`static/img/tarot_sprite.jpg`，2600×2040 px，Wikimedia Commons Public Domain 授權)
 - 新增 `static/css/card-sprite.css` 卡面樣式表，含 `.tarot-card-image` 背景定位規則、`[data-reversed="true"]` 逆位 transform、`@keyframes tarot-sprite-pulse` 載入動畫、`.tarot-card-fallback` 文字降級版
 - 新增 `Divination.renderCard(card, isReversed, container)` 方法，支援 sprite sheet 渲染、座標 clamp 防呆、缺座標 / sprite 404 自動降級為文字版
