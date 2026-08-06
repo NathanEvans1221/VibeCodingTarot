@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt -r requirements-dev.txt pytest
+
+      - name: Run tests
+        run: python -m pytest tests/ -v
+
+      - name: Verify sprite integrity
+        run: |
+          python -c "
+          import json
+          from pathlib import Path
+          cards = json.loads(Path('data/tarot_cards.json').read_text(encoding='utf-8'))
+          sprite = Path('static/img/tarot_sprite.jpg')
+          assert sprite.exists(), 'sprite 檔案缺失'
+          assert len(cards) == 78, f'預期 78 張牌,實際 {len(cards)}'
+          print(f'OK: {len(cards)} 張牌, sprite {sprite.stat().st_size/1024:.0f} KB')
+          "
